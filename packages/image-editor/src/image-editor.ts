@@ -1,21 +1,34 @@
-import type { StaticCanvas } from 'fabric';
+import type { Canvas } from 'fabric';
 
-import { StaticCanvas as FabricStaticCanvas, FabricText } from 'fabric';
+import { Canvas as FabricCanvas, FabricText } from 'fabric';
 
 export class ImageEditor {
+  private static instance: ImageEditor;
   private readonly container: HTMLElement;
   //   private canvas: HTMLCanvasElement | null = null;
-  private fabricCanvas: StaticCanvas | null = null;
+  private fabricCanvas: Canvas | null = null;
 
   constructor(container: HTMLElement) {
     this.container = container;
   }
 
   public init() {
-    this.fabricCanvas = new FabricStaticCanvas();
-    this.fabricCanvas.add(new FabricText('Hello World'));
-    this.fabricCanvas.renderAll();
-    this.container.appendChild(this.fabricCanvas.getElement());
+    console.log('init');
+    if (!this.fabricCanvas) {
+      this.fabricCanvas = new FabricCanvas();
+      if (!this.container.contains(this.fabricCanvas.getElement())) {
+        console.log('append');
+
+        this.fabricCanvas.add(new FabricText('Hello World'));
+        this.fabricCanvas.renderAll();
+
+        this.container.appendChild(this.fabricCanvas.getElement());
+      }
+
+      //   this.fabricCanvas.add(new FabricText('Hello World'));
+      //   this.fabricCanvas.renderAll();
+      //   this.container.appendChild(this.fabricCanvas.getElement());
+    }
   }
 
   //   public initCanvas() {

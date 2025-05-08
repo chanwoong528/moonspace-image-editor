@@ -9,11 +9,13 @@ function App() {
   const canvasContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const imageEditor = new ImageEditor(canvasContainerRef.current!);
-    imageEditor.init();
-    return () => {
-      imageEditor.destroy();
-    };
+    if (canvasContainerRef.current) {
+      const imageEditor = new ImageEditor(canvasContainerRef.current);
+      imageEditor.init();
+      return () => {
+        imageEditor.destroy();
+      };
+    }
   }, []);
 
   return (
@@ -38,7 +40,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <div ref={canvasContainerRef}></div>
+      <div className="canvas-container" ref={canvasContainerRef}></div>
     </>
   );
 }
