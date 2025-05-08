@@ -3,7 +3,7 @@ import type { Canvas } from 'fabric';
 import { Canvas as FabricCanvas, FabricText } from 'fabric';
 
 export class ImageEditor {
-  private static instance: ImageEditor;
+  //   private static instance: ImageEditor;
   private readonly container: HTMLElement;
   //   private canvas: HTMLCanvasElement | null = null;
   private fabricCanvas: Canvas | null = null;
