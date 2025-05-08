@@ -1,5 +1,0 @@
----
-'common': major
----
-
-first publish

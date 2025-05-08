@@ -14,6 +14,7 @@ export class ImageEditor {
 
   public init() {
     console.log('init');
+    console.log(this.fabricCanvas);
     if (!this.fabricCanvas) {
       this.fabricCanvas = new FabricCanvas();
       if (!this.container.contains(this.fabricCanvas.getElement())) {
