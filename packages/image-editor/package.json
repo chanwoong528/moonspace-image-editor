@@ -1,12 +1,12 @@
 {
-  "name": "common",
+  "name": "image-editor",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/common.js",
+  "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite build --watch",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

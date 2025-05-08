@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "prepare": "husky",
-    "common": "pnpm --filter common",
+    "image-editor": "pnpm --filter image-editor",
     "js-demo": "pnpm --filter js-demo",
     "react-demo": "pnpm --filter react-demo"
   },
@@ -21,6 +21,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "@changesets/cli": "^2.29.3",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@eslint/js": "^9.26.0",
