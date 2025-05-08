@@ -10,7 +10,8 @@
     "prepare": "husky",
     "image-editor": "pnpm --filter image-editor",
     "js-demo": "pnpm --filter js-demo",
-    "react-demo": "pnpm --filter react-demo"
+    "react-demo": "pnpm --filter react-demo",
+    "publish": "pnpm changeset publish --access public"
   },
   "keywords": [],
   "author": "",
