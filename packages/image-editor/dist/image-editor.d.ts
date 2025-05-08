@@ -1,7 +1,9 @@
+import { StaticCanvas } from 'fabric';
 export declare class ImageEditor {
     private readonly container;
-    private canvas;
+    private fabricCanvas;
     constructor(container: HTMLElement);
-    initCanvas(): void;
-    getCanvas(): HTMLCanvasElement | null;
+    init(): void;
+    getCanvas(): StaticCanvas<import('fabric').StaticCanvasEvents> | null;
+    destroy(): void;
 }

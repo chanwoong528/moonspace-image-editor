@@ -27,6 +27,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 const imageEditor = new ImageEditor(
   document.querySelector<HTMLDivElement>('#canvas-container')!,
 );
-imageEditor.initCanvas();
+imageEditor.init();
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);

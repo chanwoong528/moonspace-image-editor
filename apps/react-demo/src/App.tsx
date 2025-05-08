@@ -10,7 +10,10 @@ function App() {
 
   useEffect(() => {
     const imageEditor = new ImageEditor(canvasContainerRef.current!);
-    imageEditor.initCanvas();
+    imageEditor.init();
+    return () => {
+      imageEditor.destroy();
+    };
   }, []);
 
   return (
