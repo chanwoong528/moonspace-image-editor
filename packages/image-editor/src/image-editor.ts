@@ -15,10 +15,13 @@ export class ImageEditor {
   public init() {
     console.log('init');
     console.log(this.fabricCanvas);
+    console.log('@@@@ zzzz');
     if (!this.fabricCanvas) {
       this.fabricCanvas = new FabricCanvas();
       if (!this.container.contains(this.fabricCanvas.getElement())) {
         console.log('append');
+
+        console.log(this.fabricCanvas);
 
         this.fabricCanvas.add(new FabricText('Hello World'));
         this.fabricCanvas.renderAll();
