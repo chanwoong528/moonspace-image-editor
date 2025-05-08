@@ -26,9 +26,9 @@ jobs:
           node-version: 22
           cache: pnpm
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm  install
       - name: Build
-        run: pnpm build
+        run: pnpm image-editor build
       - name: Publish
         run: pnpm publish
         env:
