@@ -7186,7 +7186,7 @@ class ch {
     this.container = t;
   }
   init() {
-    console.log("init"), this.fabricCanvas || (this.fabricCanvas = new ar(), this.container.contains(this.fabricCanvas.getElement()) || (console.log("append"), this.fabricCanvas.add(new K("Hello World")), this.fabricCanvas.renderAll(), this.container.appendChild(this.fabricCanvas.getElement())));
+    console.log("init"), console.log(this.fabricCanvas), console.log("@@@@ zzzz"), this.fabricCanvas || (this.fabricCanvas = new ar(), this.container.contains(this.fabricCanvas.getElement()) || (console.log("append"), console.log(this.fabricCanvas), this.fabricCanvas.add(new K("Hello World")), this.fabricCanvas.renderAll(), this.container.appendChild(this.fabricCanvas.getElement())));
   }
   //   public initCanvas() {
   //     this.canvas = document.createElement('canvas');
