@@ -7,8 +7,8 @@ chore
 ci
 docs
 feat
-fix
 perf
+fix
 refactor
 revert
 style

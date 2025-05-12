@@ -1,52 +1,27 @@
-import type { Canvas } from 'fabric';
-
-import { Canvas as FabricCanvas, FabricText } from 'fabric';
+import * as fabric from 'fabric';
 
 export class ImageEditor {
   //   private static instance: ImageEditor;
-  private readonly container: HTMLElement;
-  //   private canvas: HTMLCanvasElement | null = null;
-  private fabricCanvas: Canvas | null = null;
 
-  constructor(container: HTMLElement) {
-    this.container = container;
-  }
+  private fabricCanvas: fabric.Canvas | null = null;
 
-  public init() {
-    console.log('init');
-    console.log(this.fabricCanvas);
-    console.log('@@@@ zzzz');
-    if (!this.fabricCanvas) {
-      this.fabricCanvas = new FabricCanvas();
-      if (!this.container.contains(this.fabricCanvas.getElement())) {
-        console.log('append');
-
-        console.log(this.fabricCanvas);
-
-        this.fabricCanvas.add(new FabricText('Hello World'));
-        this.fabricCanvas.renderAll();
-
-        this.container.appendChild(this.fabricCanvas.getElement());
-      }
-
-      //   this.fabricCanvas.add(new FabricText('Hello World'));
-      //   this.fabricCanvas.renderAll();
-      //   this.container.appendChild(this.fabricCanvas.getElement());
+  constructor(canvasElement: HTMLElement) {
+    if (
+      !canvasElement ||
+      !(canvasElement instanceof HTMLCanvasElement) ||
+      canvasElement instanceof fabric.Canvas
+    ) {
+      throw new Error('canvasElement is required');
     }
+    this.fabricCanvas = new fabric.Canvas(canvasElement);
+    // this.fabricCanvas.setDimensions({
+    //   width: canvasElement.width,
+    //   height: canvasElement.height,
+    // });
+    // this.fabricCanvas.renderAll();
   }
 
-  //   public initCanvas() {
-  //     this.canvas = document.createElement('canvas');
-  //     this.container.appendChild(this.canvas);
-  //     this.canvas.width = 100;
-  //     this.canvas.height = 100;
-  //     this.canvas.style.border = '1px solid #000';
-  //     this.canvas.style.backgroundColor = 'red';
-  //   }
-
-  public getCanvas() {
-    return this.fabricCanvas;
-  }
+  public init() {}
 
   public destroy() {
     this.fabricCanvas?.destroy();

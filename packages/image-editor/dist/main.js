@@ -1,6 +1,6 @@
 var _n = Object.defineProperty;
 var xn = (a, t, e) => t in a ? _n(a, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : a[t] = e;
-var Bs = (a, t, e) => xn(a, typeof t != "symbol" ? t + "" : t, e);
+var kr = (a, t, e) => xn(a, typeof t != "symbol" ? t + "" : t, e);
 function p(a, t, e) {
   return (t = function(s) {
     var r = function(i, n) {
@@ -119,9 +119,9 @@ void main(){}`), r = t.createShader(t.FRAGMENT_SHADER);
 const wn = {};
 let Pr;
 const wt = () => Pr || (Pr = { document, window, isTouchSupported: "ontouchstart" in window || "ontouchstart" in document || window && window.navigator && window.navigator.maxTouchPoints > 0, WebGLProbe: new Sn(), dispose() {
-}, copyPasteData: wn }), ge = () => wt().document, lr = () => wt().window, fi = () => {
+}, copyPasteData: wn }), ge = () => wt().document, hr = () => wt().window, fi = () => {
   var a;
-  return Math.max((a = E.devicePixelRatio) !== null && a !== void 0 ? a : lr().devicePixelRatio, 1);
+  return Math.max((a = E.devicePixelRatio) !== null && a !== void 0 ? a : hr().devicePixelRatio, 1);
 }, Se = new class {
   constructor() {
     p(this, "charWidthsCache", {}), p(this, "boundsOfCurveCache", {});
@@ -142,7 +142,7 @@ const wt = () => Pr || (Pr = { document, window, isTouchSupported: "ontouchstart
 }(), Js = "6.6.4";
 function ls() {
 }
-const je = Math.PI / 2, fs = 2 * Math.PI, cr = Math.PI / 180, $ = Object.freeze([1, 0, 0, 1, 0, 0]), ur = 16, Wt = 0.4477152502, k = "center", P = "left", et = "top", Zs = "bottom", V = "right", st = "none", gr = /\r?\n/, pi = "moving", Ts = "scaling", mi = "rotating", dr = "rotate", vi = "skewing", De = "resizing", Tn = "modifyPoly", On = "modifyPath", ps = "changed", Os = "scale", it = "scaleX", ct = "scaleY", de = "skewX", fe = "skewY", N = "fill", rt = "stroke", ms = "modified", se = "json", Is = "svg", b = new class {
+const je = Math.PI / 2, fs = 2 * Math.PI, lr = Math.PI / 180, $ = Object.freeze([1, 0, 0, 1, 0, 0]), cr = 16, Wt = 0.4477152502, k = "center", P = "left", et = "top", Zs = "bottom", V = "right", st = "none", ur = /\r?\n/, pi = "moving", Os = "scaling", mi = "rotating", gr = "rotate", vi = "skewing", De = "resizing", Tn = "modifyPoly", On = "modifyPath", ps = "changed", Ds = "scale", it = "scaleX", ct = "scaleY", de = "skewX", fe = "skewY", N = "fill", rt = "stroke", ms = "modified", se = "json", Is = "svg", b = new class {
   constructor() {
     this[se] = /* @__PURE__ */ new Map(), this[Is] = /* @__PURE__ */ new Map();
   }
@@ -366,7 +366,7 @@ class y {
     return new y(this.x, this.y);
   }
   rotate(t) {
-    let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : fr;
+    let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : dr;
     const s = Ft(t), r = jt(t), i = this.subtract(e);
     return new y(i.x * r - i.y * s, i.x * s + i.y * r).add(e);
   }
@@ -375,7 +375,7 @@ class y {
     return new y(t[0] * this.x + t[2] * this.y + (e ? 0 : t[4]), t[1] * this.x + t[3] * this.y + (e ? 0 : t[5]));
   }
 }
-const fr = new y(0, 0), cs = (a) => !!a && Array.isArray(a._objects);
+const dr = new y(0, 0), cs = (a) => !!a && Array.isArray(a._objects);
 function yi(a) {
   class t extends a {
     constructor() {
@@ -510,10 +510,10 @@ class _i extends Dn {
   }
 }
 function us(a) {
-  return lr().requestAnimationFrame(a);
+  return hr().requestAnimationFrame(a);
 }
 function kn(a) {
-  return lr().cancelAnimationFrame(a);
+  return hr().cancelAnimationFrame(a);
 }
 let Mn = 0;
 const zt = () => Mn++, _t = () => {
@@ -525,10 +525,10 @@ const zt = () => Mn++, _t = () => {
   return t.width = a.width, t.height = a.height, t;
 }, xi = (a, t, e) => a.toDataURL("image/".concat(t), e), Ci = (a, t, e) => new Promise((s, r) => {
   a.toBlob(s, "image/".concat(t), e);
-}), z = (a) => a * cr, Lt = (a) => a / cr, Pn = (a) => a.every((t, e) => t === $[e]), tt = (a, t, e) => new y(a).transform(t, e), vt = (a) => {
+}), z = (a) => a * lr, Lt = (a) => a / lr, Pn = (a) => a.every((t, e) => t === $[e]), tt = (a, t, e) => new y(a).transform(t, e), vt = (a) => {
   const t = 1 / (a[0] * a[3] - a[1] * a[2]), e = [t * a[3], -t * a[1], -t * a[2], t * a[0], 0, 0], { x: s, y: r } = new y(a[4], a[5]).transform(e, !0);
   return e[4] = -s, e[5] = -r, e;
-}, q = (a, t, e) => [a[0] * t[0] + a[2] * t[1], a[1] * t[0] + a[3] * t[1], a[0] * t[2] + a[2] * t[3], a[1] * t[2] + a[3] * t[3], e ? 0 : a[0] * t[4] + a[2] * t[5] + a[4], e ? 0 : a[1] * t[4] + a[3] * t[5] + a[5]], pr = (a, t) => a.reduceRight((e, s) => s && e ? q(s, e, t) : s || e, void 0) || $.concat(), bi = (a) => {
+}, q = (a, t, e) => [a[0] * t[0] + a[2] * t[1], a[1] * t[0] + a[3] * t[1], a[0] * t[2] + a[2] * t[3], a[1] * t[2] + a[3] * t[3], e ? 0 : a[0] * t[4] + a[2] * t[5] + a[4], e ? 0 : a[1] * t[4] + a[3] * t[5] + a[5]], fr = (a, t) => a.reduceRight((e, s) => s && e ? q(s, e, t) : s || e, void 0) || $.concat(), bi = (a) => {
   let [t, e] = a;
   return Math.atan2(e, t);
 }, ys = (a) => {
@@ -542,16 +542,16 @@ function pe() {
   const s = z(a), r = jt(s), i = Ft(s);
   return [r, i, -i, r, t ? t - (r * t - i * e) : 0, e ? e - (i * t + r * e) : 0];
 }
-const mr = function(a) {
+const pr = function(a) {
   return [a, 0, 0, arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : a, 0, 0];
-}, Si = (a) => Math.tan(z(a)), wi = (a) => [1, 0, Si(a), 1, 0, 0], Ti = (a) => [1, Si(a), 0, 1, 0, 0], Ds = (a) => {
-  let { scaleX: t = 1, scaleY: e = 1, flipX: s = !1, flipY: r = !1, skewX: i = 0, skewY: n = 0 } = a, o = mr(s ? -t : t, r ? -e : e);
+}, Si = (a) => Math.tan(z(a)), wi = (a) => [1, 0, Si(a), 1, 0, 0], Ti = (a) => [1, Si(a), 0, 1, 0, 0], ks = (a) => {
+  let { scaleX: t = 1, scaleY: e = 1, flipX: s = !1, flipY: r = !1, skewX: i = 0, skewY: n = 0 } = a, o = pr(s ? -t : t, r ? -e : e);
   return i && (o = q(o, wi(i), !0)), n && (o = q(o, Ti(n), !0)), o;
 }, An = (a) => {
   const { translateX: t = 0, translateY: e = 0, angle: s = 0 } = a;
   let r = Fe(t, e);
   s && (r = q(r, pe({ angle: s })));
-  const i = Ds(a);
+  const i = ks(a);
   return Pn(i) || (r = q(r, i)), r;
 }, gs = function(a) {
   let { signal: t, crossOrigin: e = null } = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
@@ -581,7 +581,7 @@ const mr = function(a) {
       t && t.removeEventListener("abort", r);
     });
   });
-}, ks = function(a) {
+}, Ms = function(a) {
   let { signal: t } = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
   return new Promise((e, s) => {
     const r = [];
@@ -600,7 +600,7 @@ const mr = function(a) {
   });
 }, me = function(a) {
   return (arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : []).reduce((t, e) => (e in a && (t[e] = a[e]), t), {});
-}, vr = (a, t) => Object.keys(a).reduce((e, s) => (t(a[s], s, a) && (e[s] = a[s]), e), {}), R = (a, t) => parseFloat(Number(a).toFixed(t)), Me = (a) => "matrix(" + a.map((t) => R(t, E.NUM_FRACTION_DIGITS)).join(" ") + ")", lt = (a) => !!a && a.toLive !== void 0, Ar = (a) => !!a && typeof a.toObject == "function", jr = (a) => !!a && a.offsetX !== void 0 && "source" in a, Ut = (a) => !!a && "multiSelectionStacking" in a;
+}, mr = (a, t) => Object.keys(a).reduce((e, s) => (t(a[s], s, a) && (e[s] = a[s]), e), {}), R = (a, t) => parseFloat(Number(a).toFixed(t)), Me = (a) => "matrix(" + a.map((t) => R(t, E.NUM_FRACTION_DIGITS)).join(" ") + ")", lt = (a) => !!a && a.toLive !== void 0, Ar = (a) => !!a && typeof a.toObject == "function", jr = (a) => !!a && a.offsetX !== void 0 && "source" in a, Ut = (a) => !!a && "multiSelectionStacking" in a;
 function Oi(a) {
   const t = a && mt(a);
   let e = 0, s = 0;
@@ -972,7 +972,7 @@ Resulting to default behavior: removing object from previous canvas and adding t
     let { signal: s } = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
     if (!t) return Promise.reject(new St("`json` is undefined"));
     const r = typeof t == "string" ? JSON.parse(t) : t, { objects: i = [], backgroundImage: n, background: o, overlayImage: h, overlay: l, clipPath: c } = r, u = this.renderOnAddRemove;
-    return this.renderOnAddRemove = !1, Promise.all([ke(i, { reviver: e, signal: s }), ks({ backgroundImage: n, backgroundColor: o, overlayImage: h, overlayColor: l, clipPath: c }, { signal: s })]).then((g) => {
+    return this.renderOnAddRemove = !1, Promise.all([ke(i, { reviver: e, signal: s }), Ms({ backgroundImage: n, backgroundColor: o, overlayImage: h, overlayColor: l, clipPath: c }, { signal: s })]).then((g) => {
       let [d, f] = g;
       return this.clear(), this.add(...d), this.set(r), this.set(f), this.renderOnAddRemove = u, this;
     });
@@ -1036,20 +1036,20 @@ const Fn = ["touchstart", "touchmove", "touchend"], Ln = (a) => {
   a.flipX = !1, a.flipY = !1, Object.assign(a, o), a.set({ scaleX: i, scaleY: n }), a.setPositionByOrigin(h, k, k);
 }, In = (a) => {
   a.scaleX = 1, a.scaleY = 1, a.skewX = 0, a.skewY = 0, a.flipX = !1, a.flipY = !1, a.rotate(0);
-}, Ei = (a) => ({ scaleX: a.scaleX, scaleY: a.scaleY, skewX: a.skewX, skewY: a.skewY, angle: a.angle, left: a.left, flipX: a.flipX, flipY: a.flipY, top: a.top }), yr = (a, t, e) => {
+}, Ei = (a) => ({ scaleX: a.scaleX, scaleY: a.scaleY, skewX: a.skewX, skewY: a.skewY, angle: a.angle, left: a.left, flipX: a.flipX, flipY: a.flipY, top: a.top }), vr = (a, t, e) => {
   const s = a / 2, r = t / 2, i = [new y(-s, -r), new y(s, -r), new y(-s, r), new y(s, r)].map((o) => o.transform(e)), n = Pt(i);
   return new y(n.width, n.height);
-}, Ms = function() {
+}, Es = function() {
   let a = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : $;
   return q(vt(arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : $), a);
 }, he = function(a) {
   let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : $, e = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : $;
-  return a.transform(Ms(t, e));
+  return a.transform(Es(t, e));
 }, Xn = function(a) {
   let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : $, e = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : $;
-  return a.transform(Ms(t, e), !0);
+  return a.transform(Es(t, e), !0);
 }, Wn = (a, t, e) => {
-  const s = Ms(t, e);
+  const s = Es(t, e);
   return _s(a, q(s, a.calcOwnMatrix())), s;
 }, Pi = (a, t) => {
   var e;
@@ -1067,7 +1067,7 @@ function Fi(a, t) {
   const e = a.getTotalAngle() + Lt(Math.atan2(t.y, t.x)) + 360;
   return Math.round(e % 360 / 45);
 }
-function _r(a, t, e, s, r) {
+function yr(a, t, e, s, r) {
   var i;
   let { target: n, corner: o } = a;
   const h = n.controls[o], l = ((i = n.canvas) === null || i === void 0 ? void 0 : i.getZoom()) || 1, c = n.padding / l, u = function(g, d, f, v) {
@@ -1218,7 +1218,7 @@ class j {
   }
 }
 const le = function(a) {
-  let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : ur;
+  let t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : cr;
   const e = /\D{0,2}$/.exec(a), s = parseFloat(a), r = E.DPI;
   switch (e == null ? void 0 : e[0]) {
     case "mm":
@@ -1298,16 +1298,16 @@ class Li {
     return this.paintFirst !== N ? ' paint-order="'.concat(this.paintFirst, '" ') : "";
   }
 }
-function Es(a) {
+function Ps(a) {
   return new RegExp("^(" + a.join("|") + ")\\b", "i");
 }
 var Yr;
 const te = String.raw(Yr || (Yr = Ht(["(?:[-+]?(?:d*.d+|d+.?)(?:[eE][-+]?d+)?)"], ["(?:[-+]?(?:\\d*\\.\\d+|\\d+\\.?)(?:[eE][-+]?\\d+)?)"]))), Hn = new RegExp("(normal|italic)?\\s*(normal|small-caps)?\\s*(normal|bold|bolder|lighter|100|200|300|400|500|600|700|800|900)?\\s*(" + te + "(?:px|cm|mm|em|pt|pc|in)*)(?:\\/(normal|" + te + "))?\\s+(.*)"), Gn = { cx: P, x: P, r: "radius", cy: et, y: et, display: "visible", visibility: "visible", transform: "transformMatrix", "fill-opacity": "fillOpacity", "fill-rule": "fillRule", "font-family": "fontFamily", "font-size": "fontSize", "font-style": "fontStyle", "font-weight": "fontWeight", "letter-spacing": "charSpacing", "paint-order": "paintFirst", "stroke-dasharray": "strokeDashArray", "stroke-dashoffset": "strokeDashOffset", "stroke-linecap": "strokeLineCap", "stroke-linejoin": "strokeLineJoin", "stroke-miterlimit": "strokeMiterLimit", "stroke-opacity": "strokeOpacity", "stroke-width": "strokeWidth", "text-decoration": "textDecoration", "text-anchor": "textAnchor", opacity: "opacity", "clip-path": "clipPath", "clip-rule": "clipRule", "vector-effect": "strokeUniform", "image-rendering": "imageSmoothing" }, Ws = "font-size", Ys = "clip-path";
-Es(["path", "circle", "polygon", "polyline", "ellipse", "rect", "line", "image", "text"]);
-Es(["symbol", "image", "marker", "pattern", "view", "svg"]);
-const Vr = Es(["symbol", "g", "a", "svg", "clipPath", "defs"]), Nn = new y(1, 0), Ri = new y(), Bi = (a, t) => a.rotate(t), tr = (a, t) => new y(t).subtract(a), er = (a) => a.distanceFrom(Ri), sr = (a, t) => Math.atan2(we(a, t), qn(a, t)), Un = (a) => sr(Nn, a), xr = (a) => a.eq(Ri) ? a : a.scalarDivide(er(a)), Ii = function(a) {
+Ps(["path", "circle", "polygon", "polyline", "ellipse", "rect", "line", "image", "text"]);
+Ps(["symbol", "image", "marker", "pattern", "view", "svg"]);
+const Vr = Ps(["symbol", "g", "a", "svg", "clipPath", "defs"]), Nn = new y(1, 0), Ri = new y(), Bi = (a, t) => a.rotate(t), tr = (a, t) => new y(t).subtract(a), er = (a) => a.distanceFrom(Ri), sr = (a, t) => Math.atan2(we(a, t), qn(a, t)), Un = (a) => sr(Nn, a), _r = (a) => a.eq(Ri) ? a : a.scalarDivide(er(a)), Ii = function(a) {
   let t = !(arguments.length > 1 && arguments[1] !== void 0) || arguments[1];
-  return xr(new y(-a.y, a.x).scalarMultiply(t ? 1 : -1));
+  return _r(new y(-a.y, a.x).scalarMultiply(t ? 1 : -1));
 }, we = (a, t) => a.x * t.y - a.y * t.x, qn = (a, t) => a.x * t.x + a.y * t.y, zr = (a, t, e) => {
   if (a.eq(t) || a.eq(e)) return !0;
   const s = we(t, e), r = we(t, a), i = we(e, a);
@@ -1342,7 +1342,7 @@ class At {
   }
   toObject() {
     const t = { color: this.color, blur: this.blur, offsetX: this.offsetX, offsetY: this.offsetY, affectStroke: this.affectStroke, nonScaling: this.nonScaling, type: this.constructor.type }, e = At.ownDefaults;
-    return this.includeDefaultValues ? t : vr(t, (s, r) => s !== e[r]);
+    return this.includeDefaultValues ? t : mr(t, (s, r) => s !== e[r]);
   }
   static async fromObject(t) {
     return new this(t);
@@ -1350,7 +1350,7 @@ class At {
 }
 p(At, "ownDefaults", { color: "rgb(0,0,0)", blur: 0, offsetX: 0, offsetY: 0, affectStroke: !1, includeDefaultValues: !0, nonScaling: !1 }), p(At, "type", "shadow"), b.setClass(At, "shadow");
 const ue = (a, t, e) => Math.max(a, Math.min(t, e)), Kn = [et, P, it, ct, "flipX", "flipY", "originX", "originY", "angle", "opacity", "globalCompositeOperation", "shadow", "visible", de, fe], Rt = [N, rt, "strokeWidth", "strokeDashArray", "width", "height", "paintFirst", "strokeUniform", "strokeLineCap", "strokeDashOffset", "strokeLineJoin", "strokeMiterLimit", "backgroundColor", "clipPath"], Jn = { top: 0, left: 0, width: 0, height: 0, angle: 0, flipX: !1, flipY: !1, scaleX: 1, scaleY: 1, minScaleLimit: 0, skewX: 0, skewY: 0, originX: P, originY: et, strokeWidth: 1, strokeUniform: !1, padding: 0, opacity: 1, paintFirst: N, fill: "rgb(0,0,0)", fillRule: "nonzero", stroke: null, strokeDashArray: null, strokeDashOffset: 0, strokeLineCap: "butt", strokeLineJoin: "miter", strokeMiterLimit: 4, globalCompositeOperation: "source-over", backgroundColor: "", shadow: null, visible: !0, includeDefaultValues: !0, excludeFromExport: !1, objectCaching: !0, clipPath: void 0, inverted: !1, absolutePositioned: !1, centeredRotation: !0, centeredScaling: !1, dirty: !0 }, Zn = (a, t, e, s) => -e * Math.cos(a / s * je) + e + t, $n = () => !1;
-class Cr {
+class xr {
   constructor(t) {
     let { startValue: e, byValue: s, duration: r = 500, delay: i = 0, easing: n = Zn, onStart: o = ls, onChange: h = ls, onComplete: l = ls, abort: c = $n, target: u } = t;
     p(this, "_state", "pending"), p(this, "durationProgress", 0), p(this, "valueProgress", 0), this.tick = this.tick.bind(this), this.duration = r, this.delay = i, this.easing = n, this._onStart = o, this._onChange = h, this._onComplete = l, this._abort = c, this.target = u, this.startValue = e, this.byValue = s, this.value = this.startValue, this.endValue = Object.freeze(this.calculate(this.duration).value);
@@ -1384,7 +1384,7 @@ class Cr {
   }
 }
 const Qn = ["startValue", "endValue"];
-class to extends Cr {
+class to extends xr {
   constructor(t) {
     let { startValue: e = 0, endValue: s = 100 } = t;
     super(m(m({}, B(t, Qn)), {}, { startValue: e, byValue: s - e }));
@@ -1395,7 +1395,7 @@ class to extends Cr {
   }
 }
 const eo = ["startValue", "endValue"];
-class so extends Cr {
+class so extends xr {
   constructor(t) {
     let { startValue: e = [0], endValue: s = [100] } = t;
     super(m(m({}, B(t, eo)), {}, { startValue: e, byValue: s.map((r, i) => r - e[i]) }));
@@ -1406,7 +1406,7 @@ class so extends Cr {
   }
 }
 const ro = ["startValue", "endValue", "easing", "onChange", "onComplete", "abort"], io = (a, t, e, s) => t + e * (1 - Math.cos(a / s * je)), Vs = (a) => a && ((t, e, s) => a(new j(t).toRgba(), e, s));
-class no extends Cr {
+class no extends xr {
   constructor(t) {
     let { startValue: e, endValue: s, easing: r = io, onChange: i, onComplete: n, abort: o } = t, h = B(t, ro);
     const l = new j(e).getSource(), c = new j(s).getSource();
@@ -1647,7 +1647,7 @@ class ao extends _i {
     this.strokeUniform && (r = 0, i = s);
     const n = e.width + r, o = e.height + r;
     let h;
-    return h = e.skewX === 0 && e.skewY === 0 ? new y(n * e.scaleX, o * e.scaleY) : yr(n, o, Ds(e)), h.scalarAdd(i);
+    return h = e.skewX === 0 && e.skewY === 0 ? new y(n * e.scaleX, o * e.scaleY) : vr(n, o, ks(e)), h.scalarAdd(i);
   }
   translateToGivenOrigin(t, e, s, r, i) {
     let n = t.x, o = t.y;
@@ -2010,7 +2010,7 @@ let Ot = class ds extends ao {
   }
   _removeDefaultValues(t) {
     const e = this.constructor.getDefaults(), s = Object.keys(e).length > 0 ? e : Object.getPrototypeOf(this);
-    return vr(t, (r, i) => {
+    return mr(t, (r, i) => {
       if (i === P || i === et || i === "type") return !0;
       const n = s[i];
       return r !== n && !(Array.isArray(r) && Array.isArray(n) && r.length === 0 && n.length === 0);
@@ -2021,7 +2021,7 @@ let Ot = class ds extends ao {
   }
   static _fromObject(t) {
     let e = B(t, ho), s = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, { extraParam: r } = s, i = B(s, lo);
-    return ks(e, i).then((n) => r ? (delete n[r], new this(e[r], n)) : new this(n));
+    return Ms(e, i).then((n) => r ? (delete n[r], new this(e[r], n)) : new this(n));
   }
   static fromObject(t, e) {
     return this._fromObject(t, e);
@@ -2039,7 +2039,7 @@ function ye(a) {
   };
 }
 const Nr = ve(De, ye((a, t, e, s) => {
-  const r = _r(t, t.originX, t.originY, e, s);
+  const r = yr(t, t.originX, t.originY, e, s);
   if (H(t.originX) === H(k) || H(t.originX) === H(V) && r.x < 0 || H(t.originX) === H(P) && r.x > 0) {
     const { target: i } = t, n = i.strokeWidth / (i.strokeUniform ? i.scaleX : 1), o = Ai(t) ? 2 : 1, h = i.width, l = Math.abs(r.x * o / i.scaleX) - n;
     return i.set("width", Math.max(l, 1)), h !== i.width;
@@ -2061,7 +2061,7 @@ function uo(a, t, e, s, r) {
 }
 class ft {
   constructor(t) {
-    p(this, "visible", !0), p(this, "actionName", Os), p(this, "angle", 0), p(this, "x", 0), p(this, "y", 0), p(this, "offsetX", 0), p(this, "offsetY", 0), p(this, "sizeX", 0), p(this, "sizeY", 0), p(this, "touchSizeX", 0), p(this, "touchSizeY", 0), p(this, "cursorStyle", "crosshair"), p(this, "withConnection", !1), Object.assign(this, t);
+    p(this, "visible", !0), p(this, "actionName", Ds), p(this, "angle", 0), p(this, "x", 0), p(this, "y", 0), p(this, "offsetX", 0), p(this, "offsetY", 0), p(this, "sizeX", 0), p(this, "sizeY", 0), p(this, "touchSizeX", 0), p(this, "touchSizeY", 0), p(this, "cursorStyle", "crosshair"), p(this, "withConnection", !1), Object.assign(this, t);
   }
   shouldActivate(t, e, s, r) {
     var i;
@@ -2094,7 +2094,7 @@ class ft {
     return new y(this.x * t.x + this.offsetX, this.y * t.y + this.offsetY).transform(e);
   }
   calcCornerCoords(t, e, s, r, i, n) {
-    const o = pr([Fe(s, r), pe({ angle: t }), mr((i ? this.touchSizeX : this.sizeX) || e, (i ? this.touchSizeY : this.sizeY) || e)]);
+    const o = fr([Fe(s, r), pe({ angle: t }), pr((i ? this.touchSizeX : this.sizeX) || e, (i ? this.touchSizeY : this.sizeY) || e)]);
     return { tl: new y(-0.5, -0.5).transform(o), tr: new y(0.5, -0.5).transform(o), br: new y(0.5, 0.5).transform(o), bl: new y(-0.5, 0.5).transform(o) };
   }
   render(t, e, s, r, i) {
@@ -2131,14 +2131,14 @@ const po = ["e", "se", "s", "sw", "w", "nw", "n", "ne", "e"], be = (a, t, e) => 
   const r = Fi(e, t);
   return "".concat(po[r], "-resize");
 };
-function br(a, t, e, s) {
+function Cr(a, t, e, s) {
   let r = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : {};
   const i = t.target, n = r.by, o = Wi(a, i);
   let h, l, c, u, g, d;
   if (Yi(i, n, o)) return !1;
   if (t.gestureScale) l = t.scaleX * t.gestureScale, c = t.scaleY * t.gestureScale;
   else {
-    if (h = _r(t, t.originX, t.originY, e, s), g = n !== "y" ? Math.sign(h.x || t.signX || 1) : 1, d = n !== "x" ? Math.sign(h.y || t.signY || 1) : 1, t.signX || (t.signX = g), t.signY || (t.signY = d), yt(i, "lockScalingFlip") && (t.signX !== g || t.signY !== d)) return !1;
+    if (h = yr(t, t.originX, t.originY, e, s), g = n !== "y" ? Math.sign(h.x || t.signX || 1) : 1, d = n !== "x" ? Math.sign(h.y || t.signY || 1) : 1, t.signX || (t.signX = g), t.signY || (t.signY = d), yt(i, "lockScalingFlip") && (t.signX !== g || t.signY !== d)) return !1;
     if (u = i._getTransformedDimensions(), o && !n) {
       const _ = Math.abs(h.x) + Math.abs(h.y), { original: x } = t, C = _ / (Math.abs(u.x * x.scaleX / i.scaleX) + Math.abs(u.y * x.scaleY / i.scaleY));
       l = x.scaleX * C, c = x.scaleY * C;
@@ -2148,7 +2148,7 @@ function br(a, t, e, s) {
   const f = i.scaleX, v = i.scaleY;
   return n ? (n === "x" && i.set(it, l), n === "y" && i.set(ct, c)) : (!yt(i, "lockScalingX") && i.set(it, l), !yt(i, "lockScalingY") && i.set(ct, c)), f !== i.scaleX || v !== i.scaleY;
 }
-const Xe = ve(Ts, ye((a, t, e, s) => br(a, t, e, s))), mo = ve(Ts, ye((a, t, e, s) => br(a, t, e, s, { by: "x" }))), vo = ve(Ts, ye((a, t, e, s) => br(a, t, e, s, { by: "y" }))), yo = ["target", "ex", "ey", "skewingSide"], zs = { x: { counterAxis: "y", scale: it, skew: de, lockSkewing: "lockSkewingX", origin: "originX", flip: "flipX" }, y: { counterAxis: "x", scale: ct, skew: fe, lockSkewing: "lockSkewingY", origin: "originY", flip: "flipY" } }, _o = ["ns", "nesw", "ew", "nwse"], xo = (a, t, e) => {
+const Xe = ve(Os, ye((a, t, e, s) => Cr(a, t, e, s))), mo = ve(Os, ye((a, t, e, s) => Cr(a, t, e, s, { by: "x" }))), vo = ve(Os, ye((a, t, e, s) => Cr(a, t, e, s, { by: "y" }))), yo = ["target", "ex", "ey", "skewingSide"], zs = { x: { counterAxis: "y", scale: it, skew: de, lockSkewing: "lockSkewingX", origin: "originX", flip: "flipX" }, y: { counterAxis: "x", scale: ct, skew: fe, lockSkewing: "lockSkewingY", origin: "originY", flip: "flipY" } }, _o = ["ns", "nesw", "ew", "nwse"], xo = (a, t, e) => {
   if (t.x !== 0 && yt(e, "lockSkewingY") || t.y !== 0 && yt(e, "lockSkewingX")) return xs;
   const s = Fi(e, t) % 4;
   return "".concat(_o[s], "-resize");
@@ -2156,27 +2156,27 @@ const Xe = ve(Ts, ye((a, t, e, s) => br(a, t, e, s))), mo = ve(Ts, ye((a, t, e, 
 function Vi(a, t, e, s, r) {
   const { target: i } = e, { counterAxis: n, origin: o, lockSkewing: h, skew: l, flip: c } = zs[a];
   if (yt(i, h)) return !1;
-  const { origin: u, flip: g } = zs[n], d = H(e[u]) * (i[g] ? -1 : 1), f = -Math.sign(d) * (i[c] ? -1 : 1), v = 0.5 * -((i[l] === 0 && _r(e, k, k, s, r)[a] > 0 || i[l] > 0 ? 1 : -1) * f) + 0.5;
+  const { origin: u, flip: g } = zs[n], d = H(e[u]) * (i[g] ? -1 : 1), f = -Math.sign(d) * (i[c] ? -1 : 1), v = 0.5 * -((i[l] === 0 && yr(e, k, k, s, r)[a] > 0 || i[l] > 0 ? 1 : -1) * f) + 0.5;
   return ve(vi, ye((x, C, S, w) => function(O, D, M) {
     let { target: T, ex: F, ey: L, skewingSide: G } = D, Y = B(D, yo);
     const { skew: A } = zs[O], X = M.subtract(new y(F, L)).divide(new y(T.scaleX, T.scaleY))[O], nt = T[A], Q = Y[A], gt = Math.tan(z(Q)), W = O === "y" ? T._getTransformedDimensions({ scaleX: 1, scaleY: 1, skewX: 0 }).x : T._getTransformedDimensions({ scaleX: 1, scaleY: 1 }).y, xt = 2 * X * G / Math.max(W, 1) + gt, Tt = Lt(Math.atan(xt));
     T.set(A, Tt);
     const Re = nt !== T[A];
     if (Re && O === "y") {
-      const { skewX: Ls, scaleX: _e } = T, It = T._getTransformedDimensions({ skewY: nt }), Be = T._getTransformedDimensions(), Nt = Ls !== 0 ? It.x / Be.x : 1;
+      const { skewX: Rs, scaleX: _e } = T, It = T._getTransformedDimensions({ skewY: nt }), Be = T._getTransformedDimensions(), Nt = Rs !== 0 ? It.x / Be.x : 1;
       Nt !== 1 && T.set(it, Nt * _e);
     }
     return Re;
   }(a, C, new y(S, w))))(t, m(m({}, e), {}, { [o]: v, skewingSide: f }), s, r);
 }
 const Co = (a, t, e, s) => Vi("x", a, t, e, s), bo = (a, t, e, s) => Vi("y", a, t, e, s);
-function Ps(a, t) {
+function As(a, t) {
   return a[t.canvas.altActionKey];
 }
 const We = (a, t, e) => {
-  const s = Ps(a, e);
+  const s = As(a, e);
   return t.x === 0 ? s ? de : ct : t.y === 0 ? s ? fe : it : "";
-}, ne = (a, t, e) => Ps(a, e) ? xo(0, t, e) : be(a, t, e), Ur = (a, t, e, s) => Ps(a, t.target) ? bo(a, t, e, s) : mo(a, t, e, s), qr = (a, t, e, s) => Ps(a, t.target) ? Co(a, t, e, s) : vo(a, t, e, s), zi = () => ({ ml: new ft({ x: -0.5, y: 0, cursorStyleHandler: ne, actionHandler: Ur, getActionName: We }), mr: new ft({ x: 0.5, y: 0, cursorStyleHandler: ne, actionHandler: Ur, getActionName: We }), mb: new ft({ x: 0, y: 0.5, cursorStyleHandler: ne, actionHandler: qr, getActionName: We }), mt: new ft({ x: 0, y: -0.5, cursorStyleHandler: ne, actionHandler: qr, getActionName: We }), tl: new ft({ x: -0.5, y: -0.5, cursorStyleHandler: be, actionHandler: Xe }), tr: new ft({ x: 0.5, y: -0.5, cursorStyleHandler: be, actionHandler: Xe }), bl: new ft({ x: -0.5, y: 0.5, cursorStyleHandler: be, actionHandler: Xe }), br: new ft({ x: 0.5, y: 0.5, cursorStyleHandler: be, actionHandler: Xe }), mtr: new ft({ x: 0, y: -0.5, actionHandler: fo, cursorStyleHandler: go, offsetY: -40, withConnection: !0, actionName: dr }) }), So = () => ({ mr: new ft({ x: 0.5, y: 0, actionHandler: Nr, cursorStyleHandler: ne, actionName: De }), ml: new ft({ x: -0.5, y: 0, actionHandler: Nr, cursorStyleHandler: ne, actionName: De }) }), wo = () => m(m({}, zi()), So());
+}, ne = (a, t, e) => As(a, e) ? xo(0, t, e) : be(a, t, e), Ur = (a, t, e, s) => As(a, t.target) ? bo(a, t, e, s) : mo(a, t, e, s), qr = (a, t, e, s) => As(a, t.target) ? Co(a, t, e, s) : vo(a, t, e, s), zi = () => ({ ml: new ft({ x: -0.5, y: 0, cursorStyleHandler: ne, actionHandler: Ur, getActionName: We }), mr: new ft({ x: 0.5, y: 0, cursorStyleHandler: ne, actionHandler: Ur, getActionName: We }), mb: new ft({ x: 0, y: 0.5, cursorStyleHandler: ne, actionHandler: qr, getActionName: We }), mt: new ft({ x: 0, y: -0.5, cursorStyleHandler: ne, actionHandler: qr, getActionName: We }), tl: new ft({ x: -0.5, y: -0.5, cursorStyleHandler: be, actionHandler: Xe }), tr: new ft({ x: 0.5, y: -0.5, cursorStyleHandler: be, actionHandler: Xe }), bl: new ft({ x: -0.5, y: 0.5, cursorStyleHandler: be, actionHandler: Xe }), br: new ft({ x: 0.5, y: 0.5, cursorStyleHandler: be, actionHandler: Xe }), mtr: new ft({ x: 0, y: -0.5, actionHandler: fo, cursorStyleHandler: go, offsetY: -40, withConnection: !0, actionName: gr }) }), So = () => ({ mr: new ft({ x: 0.5, y: 0, actionHandler: Nr, cursorStyleHandler: ne, actionName: De }), ml: new ft({ x: -0.5, y: 0, actionHandler: Nr, cursorStyleHandler: ne, actionName: De }) }), wo = () => m(m({}, zi()), So());
 class Pe extends Ot {
   static getDefaults() {
     return m(m({}, super.getDefaults()), Pe.ownDefaults);
@@ -2191,7 +2191,7 @@ class Pe extends Ot {
     const t = this.canvas;
     if (this.noScaleCache && t && t._currentTransform) {
       const e = t._currentTransform, s = e.target, r = e.action;
-      if (this === s && r && r.startsWith(Os)) return !1;
+      if (this === s && r && r.startsWith(Ds)) return !1;
     }
     return super._updateCacheCanvas();
   }
@@ -2250,7 +2250,7 @@ class Pe extends Ot {
   drawBorders(t, e, s) {
     let r;
     if (s && s.forActiveSelection || this.group) {
-      const i = yr(this.width, this.height, Ds(e)), n = this.isStrokeAccountedForInDimensions() ? fr : (this.strokeUniform ? new y().scalarAdd(this.canvas ? this.canvas.getZoom() : 1) : new y(e.scaleX, e.scaleY)).scalarMultiply(this.strokeWidth);
+      const i = vr(this.width, this.height, ks(e)), n = this.isStrokeAccountedForInDimensions() ? dr : (this.strokeUniform ? new y().scalarAdd(this.canvas ? this.canvas.getZoom() : 1) : new y(e.scaleX, e.scaleY)).scalarMultiply(this.strokeWidth);
       r = i.add(n).scalarAdd(this.borderScaleFactor).scalarAdd(2 * this.padding);
     } else r = this._calculateCurrentDimensions().scalarAdd(this.borderScaleFactor);
     this._drawBorders(t, r, s);
@@ -2322,9 +2322,9 @@ function Hi(a, t) {
   }), a;
 }
 p(Pe, "ownDefaults", { noScaleCache: !0, lockMovementX: !1, lockMovementY: !1, lockRotation: !1, lockScalingX: !1, lockScalingY: !1, lockSkewingX: !1, lockSkewingY: !1, lockScalingFlip: !1, cornerSize: 13, touchCornerSize: 24, transparentCorners: !0, cornerColor: "rgb(178,204,255)", cornerStrokeColor: "", cornerStyle: "rect", cornerDashArray: null, hasControls: !0, borderColor: "rgb(178,204,255)", borderDashArray: null, borderOpacityWhenMoving: 0.4, borderScaleFactor: 1, hasBorders: !0, selectionBackgroundColor: "", selectable: !0, evented: !0, perPixelTargetFind: !1, activeOn: "down", hoverCursor: null, moveCursor: null });
-class J extends Pe {
+class K extends Pe {
 }
-Hi(J, [Li]), b.setClass(J), b.setClass(J, "object");
+Hi(K, [Li]), b.setClass(K), b.setClass(K, "object");
 const To = (a, t, e, s) => {
   const r = 2 * (s = Math.round(s)) + 1, { data: i } = a.getImageData(t - s, e - s, r, r);
   for (let n = 3; n < i.length; n += 4)
@@ -2360,7 +2360,7 @@ class ce extends Gi {
     return Math.abs(s) < je ? -1 : 1;
   }
   constructor(t, e, s, r) {
-    super(r), p(this, "AB", void 0), p(this, "AC", void 0), p(this, "alpha", void 0), p(this, "bisector", void 0), this.A = new y(t), this.B = new y(e), this.C = new y(s), this.AB = this.createSideVector(this.A, this.B), this.AC = this.createSideVector(this.A, this.C), this.alpha = sr(this.AB, this.AC), this.bisector = xr(Bi(this.AB.eq(Oo) ? this.AC : this.AB, this.alpha / 2));
+    super(r), p(this, "AB", void 0), p(this, "AC", void 0), p(this, "alpha", void 0), p(this, "bisector", void 0), this.A = new y(t), this.B = new y(e), this.C = new y(s), this.AB = this.createSideVector(this.A, this.B), this.AC = this.createSideVector(this.A, this.C), this.alpha = sr(this.AB, this.AC), this.bisector = _r(Bi(this.AB.eq(Oo) ? this.AC : this.AB, this.alpha / 2));
   }
   calcOrthogonalProjection(t, e) {
     let s = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : this.strokeProjectionMagnitude;
@@ -2435,7 +2435,7 @@ class Kr extends Gi {
       const e = new y(1, 1).scalarMultiply(this.strokeProjectionMagnitude).multiply(this.strokeUniformScalar);
       t.push(this.A.add(e), this.A.subtract(e));
     } else {
-      const e = this.calcOrthogonalProjection(this.A, this.T, this.strokeProjectionMagnitude), s = this.scaleUnitVector(xr(this.createSideVector(this.A, this.T)), -this.strokeProjectionMagnitude), r = this.A.add(s);
+      const e = this.calcOrthogonalProjection(this.A, this.T, this.strokeProjectionMagnitude), s = this.scaleUnitVector(_r(this.createSideVector(this.A, this.T)), -this.strokeProjectionMagnitude), r = this.A.add(s);
       t.push(r.add(e), r.subtract(e));
     }
     return t.map((e) => this.applySkew(e));
@@ -2471,14 +2471,14 @@ const Do = function(a, t) {
     let h, l;
     n === 0 ? (l = o[1], h = e ? i : o[o.length - 1]) : n === o.length - 1 ? (h = o[n - 1], l = e ? i : o[0]) : (h = o[n - 1], l = o[n + 1]), e && o.length === 1 ? s.push(...new Kr(i, i, t).project()) : !e || n !== 0 && n !== o.length - 1 ? s.push(...new ce(i, h, l, t).project()) : s.push(...new Kr(i, n === 0 ? l : h, t).project());
   }), s;
-}, Sr = (a) => {
+}, br = (a) => {
   const t = {};
   return Object.keys(a).forEach((e) => {
     t[e] = {}, Object.keys(a[e]).forEach((s) => {
       t[e][s] = m({}, a[e][s]);
     });
   }), t;
-}, ko = (a) => a.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&apos;").replace(/</g, "&lt;").replace(/>/g, "&gt;"), wr = (a) => {
+}, ko = (a) => a.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&apos;").replace(/</g, "&lt;").replace(/>/g, "&gt;"), Sr = (a) => {
   const t = [];
   for (let e, s = 0; s < a.length; s++) (e = Mo(a, s)) !== !1 && t.push(e);
   return t;
@@ -2496,30 +2496,30 @@ const Do = function(a, t) {
   const s = a.charCodeAt(t - 1);
   if (55296 > s || s > 56319) throw "Low surrogate without preceding high surrogate";
   return !1;
-}, Tr = function(a, t) {
+}, wr = function(a, t) {
   let e = arguments.length > 2 && arguments[2] !== void 0 && arguments[2];
   return a.fill !== t.fill || a.stroke !== t.stroke || a.strokeWidth !== t.strokeWidth || a.fontSize !== t.fontSize || a.fontFamily !== t.fontFamily || a.fontWeight !== t.fontWeight || a.fontStyle !== t.fontStyle || a.textBackgroundColor !== t.textBackgroundColor || a.deltaY !== t.deltaY || e && (a.overline !== t.overline || a.underline !== t.underline || a.linethrough !== t.linethrough);
 }, Eo = (a, t) => {
   const e = t.split(`
 `), s = [];
   let r = -1, i = {};
-  a = Sr(a);
+  a = br(a);
   for (let n = 0; n < e.length; n++) {
-    const o = wr(e[n]);
+    const o = Sr(e[n]);
     if (a[n]) for (let h = 0; h < o.length; h++) {
       r++;
       const l = a[n][h];
-      l && Object.keys(l).length > 0 && (Tr(i, l, !0) ? s.push({ start: r, end: r + 1, style: l }) : s[s.length - 1].end++), i = l || {};
+      l && Object.keys(l).length > 0 && (wr(i, l, !0) ? s.push({ start: r, end: r + 1, style: l }) : s[s.length - 1].end++), i = l || {};
     }
     else r += o.length, i = {};
   }
   return s;
 }, Po = (a, t) => {
-  if (!Array.isArray(a)) return Sr(a);
-  const e = t.split(gr), s = {};
+  if (!Array.isArray(a)) return br(a);
+  const e = t.split(ur), s = {};
   let r = -1, i = 0;
   for (let n = 0; n < e.length; n++) {
-    const o = wr(e[n]);
+    const o = Sr(e[n]);
     for (let h = 0; h < o.length; h++) r++, a[i] && a[i].start <= r && r < a[i].end && (s[n] = s[n] || {}, s[n][h] = m({}, a[i].style), r === a[i].end - 1 && i++);
   }
   return s;
@@ -2547,7 +2547,7 @@ const jo = (a) => {
   return (t = Gn[a]) !== null && t !== void 0 ? t : a;
 }, Fo = new RegExp("(".concat(te, ")"), "gi"), Lo = (a) => a.replace(Fo, " $1 ").replace(/,/gi, " ").replace(/\s+/gi, " ");
 var Zr, $r, Qr, ti, ei, si, ri;
-const Z = "(".concat(te, ")"), Ro = String.raw(Zr || (Zr = Ht(["(skewX)(", ")"], ["(skewX)\\(", "\\)"])), Z), Bo = String.raw($r || ($r = Ht(["(skewY)(", ")"], ["(skewY)\\(", "\\)"])), Z), Io = String.raw(Qr || (Qr = Ht(["(rotate)(", "(?: ", " ", ")?)"], ["(rotate)\\(", "(?: ", " ", ")?\\)"])), Z, Z, Z), Xo = String.raw(ti || (ti = Ht(["(scale)(", "(?: ", ")?)"], ["(scale)\\(", "(?: ", ")?\\)"])), Z, Z), Wo = String.raw(ei || (ei = Ht(["(translate)(", "(?: ", ")?)"], ["(translate)\\(", "(?: ", ")?\\)"])), Z, Z), Yo = String.raw(si || (si = Ht(["(matrix)(", " ", " ", " ", " ", " ", ")"], ["(matrix)\\(", " ", " ", " ", " ", " ", "\\)"])), Z, Z, Z, Z, Z, Z), Or = "(?:".concat(Yo, "|").concat(Wo, "|").concat(Io, "|").concat(Xo, "|").concat(Ro, "|").concat(Bo, ")"), Vo = "(?:".concat(Or, "*)"), zo = String.raw(ri || (ri = Ht(["^s*(?:", "?)s*$"], ["^\\s*(?:", "?)\\s*$"])), Vo), Ho = new RegExp(zo), Go = new RegExp(Or), No = new RegExp(Or, "g");
+const Z = "(".concat(te, ")"), Ro = String.raw(Zr || (Zr = Ht(["(skewX)(", ")"], ["(skewX)\\(", "\\)"])), Z), Bo = String.raw($r || ($r = Ht(["(skewY)(", ")"], ["(skewY)\\(", "\\)"])), Z), Io = String.raw(Qr || (Qr = Ht(["(rotate)(", "(?: ", " ", ")?)"], ["(rotate)\\(", "(?: ", " ", ")?\\)"])), Z, Z, Z), Xo = String.raw(ti || (ti = Ht(["(scale)(", "(?: ", ")?)"], ["(scale)\\(", "(?: ", ")?\\)"])), Z, Z), Wo = String.raw(ei || (ei = Ht(["(translate)(", "(?: ", ")?)"], ["(translate)\\(", "(?: ", ")?\\)"])), Z, Z), Yo = String.raw(si || (si = Ht(["(matrix)(", " ", " ", " ", " ", " ", ")"], ["(matrix)\\(", " ", " ", " ", " ", " ", "\\)"])), Z, Z, Z, Z, Z, Z), Tr = "(?:".concat(Yo, "|").concat(Wo, "|").concat(Io, "|").concat(Xo, "|").concat(Ro, "|").concat(Bo, ")"), Vo = "(?:".concat(Tr, "*)"), zo = String.raw(ri || (ri = Ht(["^s*(?:", "?)s*$"], ["^\\s*(?:", "?)\\s*$"])), Vo), Ho = new RegExp(zo), Go = new RegExp(Tr), No = new RegExp(Tr, "g");
 function rr(a) {
   const t = [];
   if (!(a = Lo(a).replace(/\s*([()])\s*/gi, "$1")) || a && !Ho.test(a)) return [...$];
@@ -2560,11 +2560,11 @@ function rr(a) {
       case "translate":
         r = Fe(h, l);
         break;
-      case dr:
+      case gr:
         r = pe({ angle: h }, { x: l, y: c });
         break;
-      case Os:
-        r = mr(h, l);
+      case Ds:
+        r = pr(h, l);
         break;
       case de:
         r = wi(h);
@@ -2577,7 +2577,7 @@ function rr(a) {
     }
     t.push(r);
   }
-  return pr(t);
+  return fr(t);
 }
 function Uo(a, t, e, s) {
   const r = Array.isArray(t);
@@ -2626,7 +2626,7 @@ function Jo(a) {
 const Zo = { stroke: "strokeOpacity", fill: "fillOpacity" };
 function Bt(a, t, e) {
   if (!a) return {};
-  let s, r = {}, i = ur;
+  let s, r = {}, i = cr;
   a.parentNode && Vr.test(a.parentNode.nodeName) && (r = Bt(a.parentElement, t, e), r.fontSize && (s = i = le(r.fontSize)));
   const n = m(m(m({}, t.reduce((l, c) => {
     const u = a.getAttribute(c);
@@ -2645,7 +2645,7 @@ function Bt(a, t, e) {
   o && o.font && qo(o.font, o);
   const h = m(m({}, r), o);
   return Vr.test(a.nodeName) ? h : function(l) {
-    const c = J.getDefaults();
+    const c = K.getDefaults();
     return Object.entries(Zo).forEach((u) => {
       let [g, d] = u;
       if (l[d] === void 0 || l[g] === "") return;
@@ -2660,7 +2660,7 @@ function Bt(a, t, e) {
   }(h);
 }
 const $o = ["left", "top", "width", "height", "visible"], Ni = ["rx", "ry"];
-class Ct extends J {
+class Ct extends K {
   static getDefaults() {
     return m(m({}, super.getDefaults()), Ct.ownDefaults);
   }
@@ -2690,11 +2690,11 @@ class Ct extends J {
   }
 }
 p(Ct, "type", "Rect"), p(Ct, "cacheProperties", [...Rt, ...Ni]), p(Ct, "ownDefaults", { rx: 0, ry: 0 }), p(Ct, "ATTRIBUTE_NAMES", [...Gt, "x", "y", "rx", "ry", "width", "height"]), b.setClass(Ct), b.setSVGClass(Ct);
-const Mt = "initialization", Cs = "added", Dr = "removed", bs = "imperative", Ui = (a, t) => {
-  const { strokeUniform: e, strokeWidth: s, width: r, height: i, group: n } = t, o = n && n !== a ? Ms(n.calcTransformMatrix(), a.calcTransformMatrix()) : null, h = o ? t.getRelativeCenterPoint().transform(o) : t.getRelativeCenterPoint(), l = !t.isStrokeAccountedForInDimensions(), c = e && l ? Xn(new y(s, s), void 0, a.calcTransformMatrix()) : fr, u = !e && l ? s : 0, g = yr(r + u, i + u, pr([o, t.calcOwnMatrix()], !0)).add(c).scalarDivide(2);
+const Mt = "initialization", Cs = "added", Or = "removed", bs = "imperative", Ui = (a, t) => {
+  const { strokeUniform: e, strokeWidth: s, width: r, height: i, group: n } = t, o = n && n !== a ? Es(n.calcTransformMatrix(), a.calcTransformMatrix()) : null, h = o ? t.getRelativeCenterPoint().transform(o) : t.getRelativeCenterPoint(), l = !t.isStrokeAccountedForInDimensions(), c = e && l ? Xn(new y(s, s), void 0, a.calcTransformMatrix()) : dr, u = !e && l ? s : 0, g = vr(r + u, i + u, fr([o, t.calcOwnMatrix()], !0)).add(c).scalarDivide(2);
   return [h.subtract(g), h.add(g)];
 };
-class As {
+class js {
   calcLayoutResult(t, e) {
     if (this.shouldPerformLayout(t)) return this.calcBoundingBox(e, t);
   }
@@ -2721,8 +2721,8 @@ class As {
     return { center: c.transform(r.calcOwnMatrix()), size: l };
   }
 }
-p(As, "type", "strategy");
-class ir extends As {
+p(js, "type", "strategy");
+class ir extends js {
   shouldPerformLayout(t) {
     return !0;
   }
@@ -2744,7 +2744,7 @@ class Ae {
   }
   attachHandlers(t, e) {
     const { target: s } = e;
-    return [ms, pi, De, mi, Ts, vi, ps, Tn, On].map((r) => t.on(r, (i) => this.performLayout(r === ms ? { type: "object_modified", trigger: r, e: i, target: s } : { type: "object_modifying", trigger: r, e: i, target: s })));
+    return [ms, pi, De, mi, Os, vi, ps, Tn, On].map((r) => t.on(r, (i) => this.performLayout(r === ms ? { type: "object_modified", trigger: r, e: i, target: s } : { type: "object_modifying", trigger: r, e: i, target: s })));
   }
   subscribe(t, e) {
     this.unsubscribe(t, e);
@@ -2762,7 +2762,7 @@ class Ae {
   }
   onBeforeLayout(t) {
     const { target: e, type: s } = t, { canvas: r } = e;
-    if (s === Mt || s === Cs ? this.subscribeTargets(t) : s === Dr && this.unsubscribeTargets(t), e.fire("layout:before", { context: t }), r && r.fire("object:layout:before", { target: e, context: t }), s === bs && t.deep) {
+    if (s === Mt || s === Cs ? this.subscribeTargets(t) : s === Or && this.unsubscribeTargets(t), e.fire("layout:before", { context: t }), r && r.fire("object:layout:before", { target: e, context: t }), s === bs && t.deep) {
       const i = B(t, Qo);
       e.forEachObject((n) => n.layoutManager && n.layoutManager.performLayout(m(m({}, i), {}, { bubbles: !1, target: n })));
     }
@@ -2811,7 +2811,7 @@ class sa extends Ae {
   performLayout() {
   }
 }
-class Qt extends yi(J) {
+class Qt extends yi(K) {
   static getDefaults() {
     return m(m({}, super.getDefaults()), Qt.ownDefaults);
   }
@@ -2843,7 +2843,7 @@ class Qt extends yi(J) {
   }
   remove() {
     const t = super.remove(...arguments);
-    return this._onAfterObjectsChange(Dr, t), t;
+    return this._onAfterObjectsChange(Or, t), t;
   }
   _onObjectAdded(t) {
     this.enterGroup(t, !0), this.fire("object:added", { target: t }), t.fire("added", { target: this });
@@ -2898,7 +2898,7 @@ class Qt extends yi(J) {
     s > -1 && this._activeObjects.splice(s, 1);
   }
   shouldCache() {
-    const t = J.prototype.shouldCache.call(this);
+    const t = K.prototype.shouldCache.call(this);
     if (t) {
       for (let e = 0; e < this._objects.length; e++) if (this._objects[e].willDrawShadow()) return this.ownCaching = !1, !1;
     }
@@ -2982,7 +2982,7 @@ class Qt extends yi(J) {
   }
   static fromObject(t, e) {
     let { type: s, objects: r = [], layoutManager: i } = t, n = B(t, ea);
-    return Promise.all([ke(r, e), ks(n, e)]).then((o) => {
+    return Promise.all([ke(r, e), Ms(n, e)]).then((o) => {
       let [h, l] = o;
       const c = new this(h, m(m(m({}, n), l), {}, { layoutManager: new sa() }));
       if (i) {
@@ -3035,18 +3035,18 @@ const ha = (a, t, e) => {
   const u = ((g, d, f, v, _, x, C) => {
     if (f === 0 || v === 0) return [];
     let S = 0, w = 0, O = 0;
-    const D = Math.PI, M = C * cr, T = Ft(M), F = jt(M), L = 0.5 * (-F * g - T * d), G = 0.5 * (-F * d + T * g), Y = f ** 2, A = v ** 2, X = G ** 2, nt = L ** 2, Q = Y * A - Y * X - A * nt;
+    const D = Math.PI, M = C * lr, T = Ft(M), F = jt(M), L = 0.5 * (-F * g - T * d), G = 0.5 * (-F * d + T * g), Y = f ** 2, A = v ** 2, X = G ** 2, nt = L ** 2, Q = Y * A - Y * X - A * nt;
     let gt = Math.abs(f), W = Math.abs(v);
     if (Q < 0) {
       const Xt = Math.sqrt(1 - Q / (Y * A));
       gt *= Xt, W *= Xt;
     } else O = (_ === x ? -1 : 1) * Math.sqrt(Q / (Y * X + A * nt));
-    const xt = O * gt * G / W, Tt = -O * W * L / gt, Re = F * xt - T * Tt + 0.5 * g, Ls = T * xt + F * Tt + 0.5 * d;
+    const xt = O * gt * G / W, Tt = -O * W * L / gt, Re = F * xt - T * Tt + 0.5 * g, Rs = T * xt + F * Tt + 0.5 * d;
     let _e = ii(1, 0, (L - xt) / gt, (G - Tt) / W), It = ii((L - xt) / gt, (G - Tt) / W, (-L - xt) / gt, (-G - Tt) / W);
     x === 0 && It > 0 ? It -= 2 * D : x === 1 && It < 0 && (It += 2 * D);
     const Be = Math.ceil(Math.abs(It / D * 2)), Nt = [], xe = It / Be, yn = 8 / 3 * Math.sin(xe / 4) * Math.sin(xe / 4) / Math.sin(xe / 2);
-    let Rs = _e + xe;
-    for (let Xt = 0; Xt < Be; Xt++) Nt[Xt] = aa(_e, Rs, F, T, gt, W, Re, Ls, yn, S, w), S = Nt[Xt][5], w = Nt[Xt][6], _e = Rs, Rs += xe;
+    let Bs = _e + xe;
+    for (let Xt = 0; Xt < Be; Xt++) Nt[Xt] = aa(_e, Bs, F, T, gt, W, Re, Rs, yn, S, w), S = Nt[Xt][5], w = Nt[Xt][6], _e = Bs, Bs += xe;
     return Nt;
   })(l - a, c - t, r, i, o, h, n);
   for (let g = 0, d = u.length; g < d; g++) u[g][1] += a, u[g][2] += t, u[g][3] += a, u[g][4] += t, u[g][5] += a, u[g][6] += t;
@@ -3242,12 +3242,12 @@ class xa extends Mi {
     super.dispose(), wt().dispose(this.upper.el), delete this.upper, delete this.container;
   }
 }
-class js extends Le {
+class Fs extends Le {
   constructor() {
     super(...arguments), p(this, "targets", []), p(this, "_hoveredTargets", []), p(this, "_objectsToRender", void 0), p(this, "_currentTransform", null), p(this, "_groupSelector", null), p(this, "contextTopDirty", !1);
   }
   static getDefaults() {
-    return m(m({}, super.getDefaults()), js.ownDefaults);
+    return m(m({}, super.getDefaults()), Fs.ownDefaults);
   }
   get upperCanvasEl() {
     var t;
@@ -3310,7 +3310,7 @@ class js extends Le {
   _shouldCenterTransform(t, e, s) {
     if (!t) return;
     let r;
-    return e === Os || e === it || e === ct || e === De ? r = this.centeredScaling || t.centeredScaling : e === dr && (r = this.centeredRotation || t.centeredRotation), r ? !s : s;
+    return e === Ds || e === it || e === ct || e === De ? r = this.centeredScaling || t.centeredScaling : e === gr && (r = this.centeredRotation || t.centeredRotation), r ? !s : s;
   }
   _getOriginFromCorner(t, e) {
     const s = { x: t.originX, y: t.originY };
@@ -3331,7 +3331,7 @@ class js extends Le {
   _drawSelection(t) {
     const { x: e, y: s, deltaX: r, deltaY: i } = this._groupSelector, n = new y(e, s).transform(this.viewportTransform), o = new y(e + r, s + i).transform(this.viewportTransform), h = this.selectionLineWidth / 2;
     let l = Math.min(n.x, o.x), c = Math.min(n.y, o.y), u = Math.max(n.x, o.x), g = Math.max(n.y, o.y);
-    this.selectionColor && (t.fillStyle = this.selectionColor, t.fillRect(l, c, u - l, g - c)), this.selectionLineWidth && this.selectionBorderColor && (t.lineWidth = this.selectionLineWidth, t.strokeStyle = this.selectionBorderColor, l += h, c += h, u -= h, g -= h, J.prototype._setLineDash.call(this, t, this.selectionDashArray), t.strokeRect(l, c, u - l, g - c));
+    this.selectionColor && (t.fillStyle = this.selectionColor, t.fillRect(l, c, u - l, g - c)), this.selectionLineWidth && this.selectionBorderColor && (t.lineWidth = this.selectionLineWidth, t.strokeStyle = this.selectionBorderColor, l += h, c += h, u -= h, g -= h, K.prototype._setLineDash.call(this, t, this.selectionDashArray), t.strokeRect(l, c, u - l, g - c));
   }
   findTarget(t) {
     if (this.skipTargetFind) return;
@@ -3493,7 +3493,7 @@ class js extends Le {
     super._setSVGObject(t, e, s), e.set(r);
   }
 }
-p(js, "ownDefaults", { uniformScaling: !0, uniScaleKey: "shiftKey", centeredScaling: !1, centeredRotation: !1, centeredKey: "altKey", altActionKey: "shiftKey", selection: !0, selectionKey: "shiftKey", selectionColor: "rgba(100, 100, 255, 0.3)", selectionDashArray: [], selectionBorderColor: "rgba(255, 255, 255, 0.3)", selectionLineWidth: 1, selectionFullyContained: !1, hoverCursor: "move", moveCursor: "move", defaultCursor: "default", freeDrawingCursor: "crosshair", notAllowedCursor: "not-allowed", perPixelTargetFind: !1, targetFindTolerance: 0, skipTargetFind: !1, stopContextMenu: !1, fireRightClick: !1, fireMiddleClick: !1, enablePointerEvents: !1, containerClass: "canvas-container", preserveObjectStacking: !1 });
+p(Fs, "ownDefaults", { uniformScaling: !0, uniScaleKey: "shiftKey", centeredScaling: !1, centeredRotation: !1, centeredKey: "altKey", altActionKey: "shiftKey", selection: !0, selectionKey: "shiftKey", selectionColor: "rgba(100, 100, 255, 0.3)", selectionDashArray: [], selectionBorderColor: "rgba(255, 255, 255, 0.3)", selectionLineWidth: 1, selectionFullyContained: !1, hoverCursor: "move", moveCursor: "move", defaultCursor: "default", freeDrawingCursor: "crosshair", notAllowedCursor: "not-allowed", perPixelTargetFind: !1, targetFindTolerance: 0, skipTargetFind: !1, stopContextMenu: !1, fireRightClick: !1, fireMiddleClick: !1, enablePointerEvents: !1, containerClass: "canvas-container", preserveObjectStacking: !1 });
 class Ca {
   constructor(t) {
     p(this, "targets", []), p(this, "__disposer", void 0);
@@ -3541,7 +3541,7 @@ const ba = ["target", "oldTarget", "fireCanvas", "e"], ot = { passive: !1 }, re 
   for (var t = arguments.length, e = new Array(t > 1 ? t - 1 : 0), s = 1; s < t; s++) e[s - 1] = arguments[s];
   return a.removeEventListener(...e);
 }, Sa = { mouse: { in: "over", out: "out", targetIn: "mouseover", targetOut: "mouseout", canvasIn: "mouse:over", canvasOut: "mouse:out" }, drag: { in: "enter", out: "leave", targetIn: "dragenter", targetOut: "dragleave", canvasIn: "drag:enter", canvasOut: "drag:leave" } };
-class ar extends js {
+class ws extends Fs {
   constructor(t) {
     super(t, arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}), p(this, "_isClick", void 0), p(this, "textEditingManager", new Ca(this)), ["_onMouseDown", "_onTouchStart", "_onMouseMove", "_onMouseUp", "_onTouchEnd", "_onResize", "_onMouseWheel", "_onMouseOut", "_onMouseEnter", "_onContextMenu", "_onClick", "_onDragStart", "_onDragEnd", "_onDragProgress", "_onDragOver", "_onDragEnter", "_onDragLeave", "_onDrop"].forEach((e) => {
       this[e] = this[e].bind(this);
@@ -4012,7 +4012,7 @@ class Hs {
 }
 p(Hs, "type", "Pattern"), b.setClass(Hs), b.setClass(Hs, "pattern");
 const Aa = ["path", "left", "top"], ja = ["d"];
-class qt extends J {
+class qt extends K {
   constructor(t) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, { path: s, left: r, top: i } = e, n = B(e, Aa);
     super(), Object.assign(this, qt.ownDefaults), this.setOptions(n), this._setPath(t || [], !0), typeof r == "number" && this.set(P, r), typeof i == "number" && this.set(et, i);
@@ -4121,7 +4121,7 @@ class qt extends J {
 }
 p(qt, "type", "Path"), p(qt, "cacheProperties", [...Rt, "path", "fillRule"]), p(qt, "ATTRIBUTE_NAMES", [...Gt, "d"]), b.setClass(qt), b.setSVGClass(qt);
 const Fa = ["left", "top", "radius"], on = ["radius", "startAngle", "endAngle", "counterClockwise"];
-class Dt extends J {
+class Dt extends K {
   static getDefaults() {
     return m(m({}, super.getDefaults()), Dt.ownDefaults);
   }
@@ -4166,8 +4166,8 @@ class Dt extends J {
   }
 }
 p(Dt, "type", "Circle"), p(Dt, "cacheProperties", [...Rt, ...on]), p(Dt, "ownDefaults", { radius: 0, startAngle: 0, endAngle: 360, counterClockwise: !1 }), p(Dt, "ATTRIBUTE_NAMES", ["cx", "cy", "r", ...Gt]), b.setClass(Dt), b.setSVGClass(Dt);
-const La = ["x1", "y1", "x2", "y2"], Ra = ["x1", "y1", "x2", "y2"], hr = ["x1", "x2", "y1", "y2"];
-class Kt extends J {
+const La = ["x1", "y1", "x2", "y2"], Ra = ["x1", "y1", "x2", "y2"], ar = ["x1", "x2", "y1", "y2"];
+class Kt extends K {
   constructor() {
     let [t, e, s, r] = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : [0, 0, 0, 0], i = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     super(), Object.assign(this, Kt.ownDefaults), this.setOptions(i), this.x1 = t, this.x2 = s, this.y1 = e, this.y2 = r, this._setWidthHeight();
@@ -4181,7 +4181,7 @@ class Kt extends J {
     this.setPositionByOrigin(l, k, k);
   }
   _set(t, e) {
-    return super._set(t, e), hr.includes(t) && this._setWidthHeight(), this;
+    return super._set(t, e), ar.includes(t) && this._setWidthHeight(), this;
   }
   _render(t) {
     t.beginPath();
@@ -4220,8 +4220,8 @@ class Kt extends J {
     return this._fromObject(m(m({}, n), {}, { points: [e, s, r, i] }), { extraParam: "points" });
   }
 }
-p(Kt, "type", "Line"), p(Kt, "cacheProperties", [...Rt, ...hr]), p(Kt, "ATTRIBUTE_NAMES", Gt.concat(hr)), b.setClass(Kt), b.setSVGClass(Kt);
-class Jt extends J {
+p(Kt, "type", "Line"), p(Kt, "cacheProperties", [...Rt, ...ar]), p(Kt, "ATTRIBUTE_NAMES", Gt.concat(ar)), b.setClass(Kt), b.setSVGClass(Kt);
+class Jt extends K {
   static getDefaults() {
     return m(m({}, super.getDefaults()), Jt.ownDefaults);
   }
@@ -4239,7 +4239,7 @@ class Jt extends J {
 }
 p(Jt, "type", "Triangle"), p(Jt, "ownDefaults", { width: 100, height: 100 }), b.setClass(Jt), b.setSVGClass(Jt);
 const an = ["rx", "ry"];
-class kt extends J {
+class kt extends K {
   static getDefaults() {
     return m(m({}, super.getDefaults()), kt.ownDefaults);
   }
@@ -4286,7 +4286,7 @@ function Ba(a) {
 }
 p(kt, "type", "Ellipse"), p(kt, "cacheProperties", [...Rt, ...an]), p(kt, "ownDefaults", { rx: 0, ry: 0 }), p(kt, "ATTRIBUTE_NAMES", [...Gt, "cx", "cy", "rx", "ry"]), b.setClass(kt), b.setSVGClass(kt);
 const Ia = ["left", "top"], hn = { exactBoundingBox: !1 };
-class pt extends J {
+class pt extends K {
   static getDefaults() {
     return m(m({}, super.getDefaults()), pt.ownDefaults);
   }
@@ -4306,7 +4306,7 @@ class pt extends J {
     t = m({ scaleX: this.scaleX, scaleY: this.scaleY, skewX: this.skewX, skewY: this.skewY, strokeLineCap: this.strokeLineCap, strokeLineJoin: this.strokeLineJoin, strokeMiterLimit: this.strokeMiterLimit, strokeUniform: this.strokeUniform, strokeWidth: this.strokeWidth }, t || {});
     const e = this.exactBoundingBox ? this._projectStrokeOnPoints(t).map((l) => l.projectedPoint) : this.points;
     if (e.length === 0) return { left: 0, top: 0, width: 0, height: 0, pathOffset: new y(), strokeOffset: new y(), strokeDiff: new y() };
-    const s = Pt(e), r = Ds(m(m({}, t), {}, { scaleX: 1, scaleY: 1 })), i = Pt(this.points.map((l) => tt(l, r, !0))), n = new y(this.scaleX, this.scaleY);
+    const s = Pt(e), r = ks(m(m({}, t), {}, { scaleX: 1, scaleY: 1 })), i = Pt(this.points.map((l) => tt(l, r, !0))), n = new y(this.scaleX, this.scaleY);
     let o = s.left + s.width / 2, h = s.top + s.height / 2;
     return this.exactBoundingBox && (o -= h * Math.tan(z(this.skewX)), h -= o * Math.tan(z(this.skewY))), m(m({}, s), {}, { pathOffset: new y(o, h), strokeOffset: new y(i.left, i.top).subtract(new y(s.left, s.top)).multiply(n), strokeDiff: new y(s.width, s.height).subtract(new y(i.width, i.height)).multiply(n) });
   }
@@ -4388,8 +4388,8 @@ class Ve extends pt {
   }
 }
 p(Ve, "ownDefaults", hn), p(Ve, "type", "Polygon"), b.setClass(Ve), b.setSVGClass(Ve);
-const ln = ["fontSize", "fontWeight", "fontFamily", "fontStyle"], cn = ["underline", "overline", "linethrough"], un = [...ln, "lineHeight", "text", "charSpacing", "textAlign", "styles", "path", "pathStartOffset", "pathSide", "pathAlign"], gn = [...un, ...cn, "textBackgroundColor", "direction"], Xa = [...ln, ...cn, rt, "strokeWidth", N, "deltaY", "textBackgroundColor"], Wa = { _reNewline: gr, _reSpacesAndTabs: /[ \t\r]/g, _reSpaceAndTab: /[ \t\r]/, _reWords: /\S+/g, fontSize: 40, fontWeight: "normal", fontFamily: "Times New Roman", underline: !1, overline: !1, linethrough: !1, textAlign: P, fontStyle: "normal", lineHeight: 1.16, superscript: { size: 0.6, baseline: -0.35 }, subscript: { size: 0.6, baseline: 0.11 }, textBackgroundColor: "", stroke: null, shadow: null, path: void 0, pathStartOffset: 0, pathSide: P, pathAlign: "baseline", _fontSizeFraction: 0.222, offsets: { underline: 0.1, linethrough: -0.315, overline: -0.88 }, _fontSizeMult: 1.13, charSpacing: 0, deltaY: 0, direction: "ltr", CACHE_FONT_SIZE: 400, MIN_TEXT_WIDTH: 2 }, bt = "justify", ws = "justify-left", Te = "justify-right", Oe = "justify-center";
-class dn extends J {
+const ln = ["fontSize", "fontWeight", "fontFamily", "fontStyle"], cn = ["underline", "overline", "linethrough"], un = [...ln, "lineHeight", "text", "charSpacing", "textAlign", "styles", "path", "pathStartOffset", "pathSide", "pathAlign"], gn = [...un, ...cn, "textBackgroundColor", "direction"], Xa = [...ln, ...cn, rt, "strokeWidth", N, "deltaY", "textBackgroundColor"], Wa = { _reNewline: ur, _reSpacesAndTabs: /[ \t\r]/g, _reSpaceAndTab: /[ \t\r]/, _reWords: /\S+/g, fontSize: 40, fontWeight: "normal", fontFamily: "Times New Roman", underline: !1, overline: !1, linethrough: !1, textAlign: P, fontStyle: "normal", lineHeight: 1.16, superscript: { size: 0.6, baseline: -0.35 }, subscript: { size: 0.6, baseline: 0.11 }, textBackgroundColor: "", stroke: null, shadow: null, path: void 0, pathStartOffset: 0, pathSide: P, pathAlign: "baseline", _fontSizeFraction: 0.222, offsets: { underline: 0.1, linethrough: -0.315, overline: -0.88 }, _fontSizeMult: 1.13, charSpacing: 0, deltaY: 0, direction: "ltr", CACHE_FONT_SIZE: 400, MIN_TEXT_WIDTH: 2 }, bt = "justify", Ts = "justify-left", Te = "justify-right", Oe = "justify-center";
+class dn extends K {
   isEmptyStyles(t) {
     if (!this.styles || t !== void 0 && !this.styles[t]) return !0;
     const e = t === void 0 ? this.styles : { line: this.styles[t] };
@@ -4429,7 +4429,7 @@ class dn extends J {
   _extendStyles(t, e) {
     const { lineIndex: s, charIndex: r } = this.get2DCursorLocation(t);
     this._getLineStyle(s) || this._setLineStyle(s);
-    const i = vr(m(m({}, this._getStyleDeclaration(s, r)), e), (n) => n !== void 0);
+    const i = mr(m(m({}, this._getStyleDeclaration(s, r)), e), (n) => n !== void 0);
     this._setStyleDeclaration(s, r, i);
   }
   getSelectionStyles(t, e, s) {
@@ -4481,12 +4481,12 @@ function Gs(a, t, e, s, r) {
 }
 const za = ["textAnchor", "textDecoration", "dx", "dy", "top", "left", "fontSize", "strokeWidth"];
 let Ns;
-class K extends dn {
+class J extends dn {
   static getDefaults() {
-    return m(m({}, super.getDefaults()), K.ownDefaults);
+    return m(m({}, super.getDefaults()), J.ownDefaults);
   }
   constructor(t, e) {
-    super(), p(this, "__charBounds", []), Object.assign(this, K.ownDefaults), this.setOptions(e), this.styles || (this.styles = {}), this.text = t, this.initialized = !0, this.path && this.setPathInfo(), this.initDimensions(), this.setCoords();
+    super(), p(this, "__charBounds", []), Object.assign(this, J.ownDefaults), this.setOptions(e), this.styles || (this.styles = {}), this.text = t, this.initialized = !0, this.path && this.setPathInfo(), this.initDimensions(), this.setCoords();
   }
   setPathInfo() {
     const t = this.path;
@@ -4675,7 +4675,7 @@ class K extends dn {
     const o = this.getHeightOfLine(n), h = this.textAlign.includes(bt), l = this.path, c = !h && this.charSpacing === 0 && this.isEmptyStyles(n) && !l, u = this.direction === "ltr", g = this.direction === "ltr" ? 1 : -1, d = e.direction;
     let f, v, _, x, C, S = "", w = 0;
     if (e.save(), d !== this.direction && (e.canvas.setAttribute("dir", u ? "ltr" : "rtl"), e.direction = u ? "ltr" : "rtl", e.textAlign = u ? P : V), i -= o * this._fontSizeFraction / this.lineHeight, c) return this._renderChar(t, e, n, 0, s.join(""), r, i), void e.restore();
-    for (let O = 0, D = s.length - 1; O <= D; O++) x = O === D || this.charSpacing || l, S += s[O], _ = this.__charBounds[n][O], w === 0 ? (r += g * (_.kernedWidth - _.width), w += _.width) : w += _.kernedWidth, h && !x && this._reSpaceAndTab.test(s[O]) && (x = !0), x || (f = f || this.getCompleteStyleDeclaration(n, O), v = this.getCompleteStyleDeclaration(n, O + 1), x = Tr(f, v, !1)), x && (l ? (e.save(), e.translate(_.renderLeft, _.renderTop), e.rotate(_.angle), this._renderChar(t, e, n, O, S, -w / 2, 0), e.restore()) : (C = r, this._renderChar(t, e, n, O, S, C, i)), S = "", f = v, r += g * w, w = 0);
+    for (let O = 0, D = s.length - 1; O <= D; O++) x = O === D || this.charSpacing || l, S += s[O], _ = this.__charBounds[n][O], w === 0 ? (r += g * (_.kernedWidth - _.width), w += _.width) : w += _.kernedWidth, h && !x && this._reSpaceAndTab.test(s[O]) && (x = !0), x || (f = f || this.getCompleteStyleDeclaration(n, O), v = this.getCompleteStyleDeclaration(n, O + 1), x = wr(f, v, !1)), x && (l ? (e.save(), e.translate(_.renderLeft, _.renderTop), e.rotate(_.angle), this._renderChar(t, e, n, O, S, -w / 2, 0), e.restore()) : (C = r, this._renderChar(t, e, n, O, S, C, i)), S = "", f = v, r += g * w, w = 0);
     e.restore();
   }
   _applyPatternGradientTransformText(t) {
@@ -4721,7 +4721,7 @@ class K extends dn {
   _getLineLeftOffset(t) {
     const e = this.getLineWidth(t), s = this.width - e, r = this.textAlign, i = this.direction, n = this.isEndOfWrapping(t);
     let o = 0;
-    return r === bt || r === Oe && !n || r === Te && !n || r === ws && !n ? 0 : (r === k && (o = s / 2), r === V && (o = s), r === Oe && (o = s / 2), r === Te && (o = s), i === "rtl" && (r === V || r === bt || r === Te ? o = 0 : r === P || r === ws ? o = -s : r !== k && r !== Oe || (o = -s / 2)), o);
+    return r === bt || r === Oe && !n || r === Te && !n || r === Ts && !n ? 0 : (r === k && (o = s / 2), r === V && (o = s), r === Oe && (o = s / 2), r === Te && (o = s), i === "rtl" && (r === V || r === bt || r === Te ? o = 0 : r === P || r === Ts ? o = -s : r !== k && r !== Oe || (o = -s / 2)), o);
   }
   _clearCache() {
     this._forceClearCache = !1, this.__lineWidths = [], this.__lineHeights = [], this.__charBounds = [];
@@ -4769,14 +4769,14 @@ class K extends dn {
   }
   _getFontDeclaration() {
     let { fontFamily: t = this.fontFamily, fontStyle: e = this.fontStyle, fontWeight: s = this.fontWeight, fontSize: r = this.fontSize } = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, i = arguments.length > 1 ? arguments[1] : void 0;
-    const n = t.includes("'") || t.includes('"') || t.includes(",") || K.genericFonts.includes(t.toLowerCase()) ? t : '"'.concat(t, '"');
+    const n = t.includes("'") || t.includes('"') || t.includes(",") || J.genericFonts.includes(t.toLowerCase()) ? t : '"'.concat(t, '"');
     return [e, s, "".concat(i ? this.CACHE_FONT_SIZE : r, "px"), n].join(" ");
   }
   render(t) {
     this.visible && (this.canvas && this.canvas.skipOffscreen && !this.group && !this.isOnScreen() || (this._forceClearCache && this.initDimensions(), super.render(t)));
   }
   graphemeSplit(t) {
-    return wr(t);
+    return Sr(t);
   }
   _splitTextIntoLines(t) {
     const e = t.split(this._reNewline), s = new Array(e.length), r = [`
@@ -4801,7 +4801,7 @@ class K extends dn {
     return 1;
   }
   static async fromElement(t, e, s) {
-    const r = Bt(t, K.ATTRIBUTE_NAMES, s), i = m(m({}, e), r), { textAnchor: n = P, textDecoration: o = "", dx: h = 0, dy: l = 0, top: c = 0, left: u = 0, fontSize: g = ur, strokeWidth: d = 1 } = i, f = B(i, za), v = new this((t.textContent || "").replace(/^\s+|\s+$|\n+/g, "").replace(/\s+/g, " "), m({ left: u + h, top: c + l, underline: o.includes("underline"), overline: o.includes("overline"), linethrough: o.includes("line-through"), strokeWidth: 0, fontSize: g }, f)), _ = v.getScaledHeight() / v.height, x = ((v.height + v.strokeWidth) * v.lineHeight - v.height) * _, C = v.getScaledHeight() + x;
+    const r = Bt(t, J.ATTRIBUTE_NAMES, s), i = m(m({}, e), r), { textAnchor: n = P, textDecoration: o = "", dx: h = 0, dy: l = 0, top: c = 0, left: u = 0, fontSize: g = cr, strokeWidth: d = 1 } = i, f = B(i, za), v = new this((t.textContent || "").replace(/^\s+|\s+$|\n+/g, "").replace(/\s+/g, " "), m({ left: u + h, top: c + l, underline: o.includes("underline"), overline: o.includes("overline"), linethrough: o.includes("line-through"), strokeWidth: 0, fontSize: g }, f)), _ = v.getScaledHeight() / v.height, x = ((v.height + v.strokeWidth) * v.lineHeight - v.height) * _, C = v.getScaledHeight() + x;
     let S = 0;
     return n === k && (S = v.getScaledWidth() / 2), n === V && (S = v.getScaledWidth()), v.set({ left: v.left - S, top: v.top - (C - v.fontSize * (0.07 + v._fontSizeFraction)) / v.lineHeight, strokeWidth: d }), v;
   }
@@ -4809,7 +4809,7 @@ class K extends dn {
     return this._fromObject(m(m({}, t), {}, { styles: Po(t.styles || {}, t.text) }), { extraParam: "text" });
   }
 }
-p(K, "textLayoutProperties", un), p(K, "cacheProperties", [...Rt, ...gn]), p(K, "ownDefaults", Wa), p(K, "type", "Text"), p(K, "genericFonts", ["serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui", "ui-serif", "ui-sans-serif", "ui-monospace", "ui-rounded", "math", "emoji", "fangsong"]), p(K, "ATTRIBUTE_NAMES", Gt.concat("x", "y", "dx", "dy", "font-family", "font-style", "font-weight", "font-size", "letter-spacing", "text-decoration", "text-anchor")), Hi(K, [class extends Li {
+p(J, "textLayoutProperties", un), p(J, "cacheProperties", [...Rt, ...gn]), p(J, "ownDefaults", Wa), p(J, "type", "Text"), p(J, "genericFonts", ["serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui", "ui-serif", "ui-sans-serif", "ui-monospace", "ui-rounded", "math", "emoji", "fangsong"]), p(J, "ATTRIBUTE_NAMES", Gt.concat("x", "y", "dx", "dy", "font-family", "font-style", "font-weight", "font-size", "letter-spacing", "text-decoration", "text-anchor")), Hi(J, [class extends Li {
   _toSVG() {
     const a = this._getSVGLeftTopOffsets(), t = this._getSVGTextAndBg(a.textTop, a.textLeft);
     return this._wrapSVGTextAndBg(t);
@@ -4851,7 +4851,7 @@ p(K, "textLayoutProperties", un), p(K, "cacheProperties", [...Rt, ...gn]), p(K, 
     const r = this.getHeightOfLine(t), i = this.textAlign.includes(bt), n = this._textLines[t];
     let o, h, l, c, u, g = "", d = 0;
     s += r * (1 - this._fontSizeFraction) / this.lineHeight;
-    for (let f = 0, v = n.length - 1; f <= v; f++) u = f === v || this.charSpacing || this.path, g += n[f], l = this.__charBounds[t][f], d === 0 ? (e += l.kernedWidth - l.width, d += l.width) : d += l.kernedWidth, i && !u && this._reSpaceAndTab.test(n[f]) && (u = !0), u || (o = o || this.getCompleteStyleDeclaration(t, f), h = this.getCompleteStyleDeclaration(t, f + 1), u = Tr(o, h, !0)), u && (c = this._getStyleDeclaration(t, f), a.push(this._createTextCharSpan(g, c, e, s, l)), g = "", o = h, this.direction === "rtl" ? e -= d : e += d, d = 0);
+    for (let f = 0, v = n.length - 1; f <= v; f++) u = f === v || this.charSpacing || this.path, g += n[f], l = this.__charBounds[t][f], d === 0 ? (e += l.kernedWidth - l.width, d += l.width) : d += l.kernedWidth, i && !u && this._reSpaceAndTab.test(n[f]) && (u = !0), u || (o = o || this.getCompleteStyleDeclaration(t, f), h = this.getCompleteStyleDeclaration(t, f + 1), u = wr(o, h, !0)), u && (c = this._getStyleDeclaration(t, f), a.push(this._createTextCharSpan(g, c, e, s, l)), g = "", o = h, this.direction === "rtl" ? e -= d : e += d, d = 0);
   }
   _setSVGTextLineBg(a, t, e, s) {
     const r = this._textLines[t], i = this.getHeightOfLine(t) / this.lineHeight;
@@ -4878,7 +4878,7 @@ p(K, "textLayoutProperties", un), p(K, "cacheProperties", [...Rt, ...gn]), p(K, 
   getSvgTextDecoration(a) {
     return ["overline", "underline", "line-through"].filter((t) => a[t.replace("-", "")]).join(" ");
   }
-}]), b.setClass(K), b.setSVGClass(K);
+}]), b.setClass(J), b.setSVGClass(J);
 class Ha {
   constructor(t) {
     p(this, "target", void 0), p(this, "__mouseDownInPlace", !1), p(this, "__dragStartFired", !1), p(this, "__isDraggingOver", !1), p(this, "__dragStartSelection", void 0), p(this, "__dragImageDisposer", void 0), p(this, "_dispose", void 0), this.target = t;
@@ -4907,7 +4907,7 @@ class Ha {
   setDragImage(t, e) {
     var s;
     let { selectionStart: r, selectionEnd: i } = e;
-    const n = this.target, o = n.canvas, h = new y(n.flipX ? -1 : 1, n.flipY ? -1 : 1), l = n._getCursorBoundaries(r), c = new y(l.left + l.leftOffset, l.top + l.topOffset).multiply(h).transform(n.calcTransformMatrix()), u = o.getScenePoint(t).subtract(c), g = n.getCanvasRetinaScaling(), d = n.getBoundingRect(), f = c.subtract(new y(d.left, d.top)), v = o.viewportTransform, _ = f.add(u).transform(v, !0), x = n.backgroundColor, C = Sr(n.styles);
+    const n = this.target, o = n.canvas, h = new y(n.flipX ? -1 : 1, n.flipY ? -1 : 1), l = n._getCursorBoundaries(r), c = new y(l.left + l.leftOffset, l.top + l.topOffset).multiply(h).transform(n.calcTransformMatrix()), u = o.getScenePoint(t).subtract(c), g = n.getCanvasRetinaScaling(), d = n.getBoundingRect(), f = c.subtract(new y(d.left, d.top)), v = o.viewportTransform, _ = f.add(u).transform(v, !0), x = n.backgroundColor, C = br(n.styles);
     n.backgroundColor = "";
     const S = { stroke: "transparent", fill: "transparent", textBackgroundColor: "transparent" };
     n.setSelectionStyles(S, 0, r), n.setSelectionStyles(S, i, n.text.length), n.dirty = !0;
@@ -4980,7 +4980,7 @@ class Ha {
   }
 }
 const hi = /[ \n\.,;!\?\-]/;
-class Ga extends K {
+class Ga extends J {
   constructor() {
     super(...arguments), p(this, "_currentCursorOpacity", 1);
   }
@@ -5048,7 +5048,7 @@ class Ga extends K {
   }
   searchWordBoundary(t, e) {
     const s = this._text;
-    let r = t > 0 && this._reSpace.test(s[t]) && (e === -1 || !gr.test(s[t - 1])) ? t - 1 : t, i = s[r];
+    let r = t > 0 && this._reSpace.test(s[t]) && (e === -1 || !ur.test(s[t - 1])) ? t - 1 : t, i = s[r];
     for (; r > 0 && r < s.length && !hi.test(i); ) r += e, i = s[r];
     return e === -1 && hi.test(i) && r++, r;
   }
@@ -5447,7 +5447,7 @@ class Et extends Ua {
     super(t, m(m({}, Et.ownDefaults), e)), this.initBehavior();
   }
   _set(t, e) {
-    return this.isEditing && this._savedProps && t in this._savedProps ? (this._savedProps[t] = e, this) : (t === "canvas" && (this.canvas instanceof ar && this.canvas.textEditingManager.remove(this), e instanceof ar && e.textEditingManager.add(this)), super._set(t, e));
+    return this.isEditing && this._savedProps && t in this._savedProps ? (this._savedProps[t] = e, this) : (t === "canvas" && (this.canvas instanceof ws && this.canvas.textEditingManager.remove(this), e instanceof ws && e.textEditingManager.add(this)), super._set(t, e));
   }
   setSelectionStart(t) {
     t = Math.max(t, 0), this._updateAndFire("selectionStart", t);
@@ -5527,7 +5527,7 @@ class Et extends Ua {
     const n = this._getLineLeftOffset(i), o = this.__charBounds[i][r];
     o && (s = o.left), this.charSpacing !== 0 && r === this._textLines[i].length && (s -= this._getWidthOfCharSpacing());
     const h = { top: e, left: n + (s > 0 ? s : 0) };
-    return this.direction === "rtl" && (this.textAlign === V || this.textAlign === bt || this.textAlign === Te ? h.left *= -1 : this.textAlign === P || this.textAlign === ws ? h.left = n - (s > 0 ? s : 0) : this.textAlign !== k && this.textAlign !== Oe || (h.left = n - (s > 0 ? s : 0))), h;
+    return this.direction === "rtl" && (this.textAlign === V || this.textAlign === bt || this.textAlign === Te ? h.left *= -1 : this.textAlign === P || this.textAlign === Ts ? h.left = n - (s > 0 ? s : 0) : this.textAlign !== k && this.textAlign !== Oe || (h.left = n - (s > 0 ? s : 0))), h;
   }
   renderCursorAt(t) {
     this._renderCursor(this.canvas.contextTop, this._getCursorBoundaries(t, !0), t);
@@ -5570,7 +5570,7 @@ class Et extends Ua {
       _ = v, (this.lineHeight < 1 || d === c && this.lineHeight > 1) && (v /= this.lineHeight);
       let S = s.left + f + x, w = v, O = 0;
       const D = C - x;
-      this.inCompositionMode ? (t.fillStyle = this.compositionColor || "black", w = 1, O = v) : t.fillStyle = this.selectionColor, this.direction === "rtl" && (this.textAlign === V || this.textAlign === bt || this.textAlign === Te ? S = this.width - S - D : this.textAlign === P || this.textAlign === ws ? S = s.left + f - C : this.textAlign !== k && this.textAlign !== Oe || (S = s.left + f - C)), t.fillRect(S, s.top + s.topOffset + O, D, w), s.topOffset += _;
+      this.inCompositionMode ? (t.fillStyle = this.compositionColor || "black", w = 1, O = v) : t.fillStyle = this.selectionColor, this.direction === "rtl" && (this.textAlign === V || this.textAlign === bt || this.textAlign === Te ? S = this.width - S - D : this.textAlign === P || this.textAlign === Ts ? S = s.left + f - C : this.textAlign !== k && this.textAlign !== Oe || (S = s.left + f - C)), t.fillRect(S, s.top + s.topOffset + O, D, w), s.topOffset += _;
     }
   }
   getCurrentCharFontSize() {
@@ -5724,7 +5724,7 @@ class Zt extends Et {
   }
 }
 p(Zt, "type", "Textbox"), p(Zt, "textLayoutProperties", [...Et.textLayoutProperties, "width"]), p(Zt, "ownDefaults", { minWidth: 20, dynamicMinWidth: 2, lockScalingFlip: !0, noScaleCache: !1, _wordJoiners: /[ \t\r]/, splitByGrapheme: !1 }), b.setClass(Zt);
-class ui extends As {
+class ui extends js {
   shouldPerformLayout(t) {
     return !!t.target.clipPath && super.shouldPerformLayout(t);
   }
@@ -5748,7 +5748,7 @@ class ui extends As {
   }
 }
 p(ui, "type", "clip-path"), b.setClass(ui);
-class gi extends As {
+class gi extends js {
   getInitialSize(t, e) {
     let { target: s } = t, { size: r } = e;
     return new y(s.width || r.x, s.height || r.y);
@@ -5806,7 +5806,7 @@ class $t extends Qt {
     e.forEach((r) => {
       const { parent: i } = r;
       i && s.add(i);
-    }), t === Dr ? s.forEach((r) => {
+    }), t === Or ? s.forEach((r) => {
       r._onAfterObjectsChange(Cs, e);
     }) : s.forEach((r) => {
       r._set("dirty", !0);
@@ -5930,7 +5930,7 @@ function qs() {
   return !Us && (!(arguments.length > 0 && arguments[0] !== void 0) || arguments[0]) && (Us = Za()), Us;
 }
 const $a = ["filters", "resizeFilter", "src", "crossOrigin", "type"], pn = ["cropX", "cropY"];
-class ht extends J {
+class ht extends K {
   static getDefaults() {
     return m(m({}, super.getDefaults()), ht.ownDefaults);
   }
@@ -6062,7 +6062,7 @@ class ht extends J {
   }
   static fromObject(t, e) {
     let { filters: s, resizeFilter: r, src: i, crossOrigin: n, type: o } = t, h = B(t, $a);
-    return Promise.all([gs(i, m(m({}, e), {}, { crossOrigin: n })), s && ke(s, e), r && ke([r], e), ks(h, e)]).then((l) => {
+    return Promise.all([gs(i, m(m({}, e), {}, { crossOrigin: n })), s && ke(s, e), r && ke([r], e), Ms(h, e)]).then((l) => {
       let [c, u = [], [g] = [], d = {}] = l;
       return new this(c, m(m({}, h), {}, { src: i, filters: u, resizeFilter: g }, d));
     });
@@ -6078,14 +6078,14 @@ class ht extends J {
   }
 }
 p(ht, "type", "Image"), p(ht, "cacheProperties", [...Rt, ...pn]), p(ht, "ownDefaults", { strokeWidth: 0, srcFromAttribute: !1, minimumScaleTrigger: 0.5, cropX: 0, cropY: 0, imageSmoothing: !0 }), p(ht, "CSS_CANVAS", "canvas-img"), p(ht, "ATTRIBUTE_NAMES", [...Gt, "x", "y", "width", "height", "preserveAspectRatio", "xlink:href", "href", "crossOrigin", "image-rendering"]), b.setClass(ht), b.setSVGClass(ht);
-Es(["pattern", "defs", "symbol", "metadata", "clipPath", "mask", "desc"]);
-const Fs = (a) => a.webgl !== void 0, kr = "precision highp float", Qa = `
-    `.concat(kr, `;
+Ps(["pattern", "defs", "symbol", "metadata", "clipPath", "mask", "desc"]);
+const Ls = (a) => a.webgl !== void 0, Dr = "precision highp float", Qa = `
+    `.concat(Dr, `;
     varying vec2 vTexCoord;
     uniform sampler2D uTexture;
     void main() {
       gl_FragColor = texture2D(uTexture, vTexCoord);
-    }`), th = ["type"], eh = ["type"], sh = new RegExp(kr, "g");
+    }`), th = ["type"], eh = ["type"], sh = new RegExp(Dr, "g");
 class U {
   get type() {
     return this.constructor.type;
@@ -6109,7 +6109,7 @@ class U {
   createProgram(t) {
     let e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : this.getFragmentSource(), s = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : this.getVertexSource();
     const { WebGLProbe: { GLPrecision: r = "highp" } } = wt();
-    r !== "highp" && (e = e.replace(sh, kr.replace("highp", r)));
+    r !== "highp" && (e = e.replace(sh, Dr.replace("highp", r)));
     const i = t.createShader(t.VERTEX_SHADER), n = t.createShader(t.FRAGMENT_SHADER), o = t.createProgram();
     if (!i || !n || !o) throw new St("Vertex, fragment shader or program creation error");
     if (t.shaderSource(i, s), t.compileShader(i), !t.getShaderParameter(i, t.COMPILE_STATUS)) throw new St("Vertex shader compile error for ".concat(this.type, ": ").concat(t.getShaderInfoLog(i)));
@@ -6146,7 +6146,7 @@ class U {
     return !1;
   }
   applyTo(t) {
-    Fs(t) ? (this._setupFrameBuffer(t), this.applyToWebGL(t), this._swapTextures(t)) : this.applyTo2d(t);
+    Ls(t) ? (this._setupFrameBuffer(t), this.applyToWebGL(t), this._swapTextures(t)) : this.applyTo2d(t);
   }
   applyTo2d(t) {
   }
@@ -6397,7 +6397,7 @@ class Je extends U {
   `;
   }
   applyTo(t) {
-    Fs(t) ? (this.aspectRatio = t.sourceWidth / t.sourceHeight, t.passes++, this._setupFrameBuffer(t), this.horizontal = !0, this.applyToWebGL(t), this._swapTextures(t), this._setupFrameBuffer(t), this.horizontal = !1, this.applyToWebGL(t), this._swapTextures(t)) : this.applyTo2d(t);
+    Ls(t) ? (this.aspectRatio = t.sourceWidth / t.sourceHeight, t.passes++, this._setupFrameBuffer(t), this.horizontal = !0, this.applyToWebGL(t), this._swapTextures(t), this._setupFrameBuffer(t), this.horizontal = !1, this.applyToWebGL(t), this._swapTextures(t)) : this.applyTo2d(t);
   }
   applyTo2d(t) {
     t.imageData = this.simpleBlur(t);
@@ -6516,7 +6516,7 @@ class di extends U {
     super(t), this.subFilters = t.subFilters || [];
   }
   applyTo(t) {
-    Fs(t) && (t.passes += this.subFilters.length - 1), this.subFilters.forEach((e) => {
+    Ls(t) && (t.passes += this.subFilters.length - 1), this.subFilters.forEach((e) => {
       e.applyTo(t);
     });
   }
@@ -7034,7 +7034,7 @@ class os extends U {
     t.passes++, this.width = t.sourceWidth, this.horizontal = !0, this.dW = Math.round(this.width * this.scaleX), this.dH = t.sourceHeight, this.tempScale = this.dW / this.width, this.taps = this.getTaps(), t.destinationWidth = this.dW, super.applyTo(t), t.sourceWidth = t.destinationWidth, this.height = t.sourceHeight, this.horizontal = !1, this.dH = Math.round(this.height * this.scaleY), this.tempScale = this.dH / this.height, this.taps = this.getTaps(), t.destinationHeight = this.dH, super.applyTo(t), t.sourceHeight = t.destinationHeight;
   }
   applyTo(t) {
-    Fs(t) ? this.applyToForWebgl(t) : this.applyTo2d(t);
+    Ls(t) ? this.applyToForWebgl(t) : this.applyTo2d(t);
   }
   isNeutralState() {
     return this.scaleX === 1 && this.scaleY === 1;
@@ -7180,24 +7180,12 @@ p(hs, "type", "Vibrance"), p(hs, "defaults", { vibrance: 0 }), p(hs, "uniformLoc
 class ch {
   constructor(t) {
     //   private static instance: ImageEditor;
-    Bs(this, "container");
-    //   private canvas: HTMLCanvasElement | null = null;
-    Bs(this, "fabricCanvas", null);
-    this.container = t;
+    kr(this, "fabricCanvas", null);
+    if (!t || !(t instanceof HTMLCanvasElement) || t instanceof ws)
+      throw new Error("canvasElement is required");
+    this.fabricCanvas = new ws(t);
   }
   init() {
-    console.log("init"), console.log(this.fabricCanvas), console.log("@@@@ zzzz"), this.fabricCanvas || (this.fabricCanvas = new ar(), this.container.contains(this.fabricCanvas.getElement()) || (console.log("append"), console.log(this.fabricCanvas), this.fabricCanvas.add(new K("Hello World")), this.fabricCanvas.renderAll(), this.container.appendChild(this.fabricCanvas.getElement())));
-  }
-  //   public initCanvas() {
-  //     this.canvas = document.createElement('canvas');
-  //     this.container.appendChild(this.canvas);
-  //     this.canvas.width = 100;
-  //     this.canvas.height = 100;
-  //     this.canvas.style.border = '1px solid #000';
-  //     this.canvas.style.backgroundColor = 'red';
-  //   }
-  getCanvas() {
-    return this.fabricCanvas;
   }
   destroy() {
     var t;
